@@ -1,0 +1,17 @@
+SkillName,Description
+"Ambush","Increases ATK by 50-500 (50 x Rank) during the first round."
+"Assassinate","Deals 30-300 (30 x Rank) Direct DMG to the enemy Creature with the lowest HP."
+"Block","Reduces DMG taken from physical ATK by 25-250 (25 x Rank)."
+"Cloudburst","Deals 25-250 (25 x Rank) Magic DMG to 3 random enemy Creatures. Has 45% chance to inflict Paralysis, preventing an attack on their next turn."
+"Consecrate","Increases ATK by 15% - 150% (15% x Rank) against Mortii."
+"Counter","Deals a counter-attack of 20-200 (20 x Rank) Direct DMG after taking physical DMG."
+"Delay","Has a 50% chance of making 1-4 (Rank) enemy Creatures skip their next turns."
+"Freezing Field","Freezes all enemy Creatures and reduces enemy Hero's Rage to 0 when played. This effect can't be resisted."
+"Frost Blade","Has a 25% - 70% (20% + 5% x Rank) chance to make enemy Creature skip its next action after a basic attack. This can't be negated."
+"Hibernate","Activates when Creature's HP falls below 30% of Max HP. Freezes and restore 30% of Creature's Max HP each turn and defrosts at 100% HP. Casts Freezing Field, freeze all enemy creatures and reduced enemy Hero's Rage. (Once per battle)."
+"Ice Arrow","Deals 20 - 200 (20 x Rank) Magic DMG to random enemy Creature. Has 40% chance to inflict Freeze, causing enemy to skip next action.
+"
+"Meteor","Deals between 30 - 300 (30 x Rank) to 50 - 500 (50 x Rank) Magic DMG to random enemy Creature."
+"Stabthrough","Deals 15% - 150% (15% x Rank) of the DMG dealt to an enemy Creature to the enemy Hero."
+"Weakness","Reduces the enemy's ATK by 20 - 200 (20 x Rank) after dealing physical DMG.
+"

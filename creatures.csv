@@ -1,0 +1,8 @@
+CreatureName,Faction,StarRating,DelayTimer,Cost,BaseAtk,BaseHP,Level0Skill,Level0SkillPoint,Level5Skill,Level5SkillPoint,Level10Skill,Level10SkillPoint,Image,Source
+"Apprentice","Human",1,2,4,135,357,"Weakness",1,"Meteor",2,"Ice Arrow",4,"cr_apprentice_1.png","Mz,LS,CB"
+"Aquarius","Human",5,4,23,285,1355,"Frost Blade",10,"Freezing Field",,"Hibernate",,"cr_aquarius_1.png","EB,HE"
+"Marksman","Human",1,2,4,110,370,"Assassinate",2,"Assassinate",4,"Cloudburst",2,"cr_marksman_1.png","Mz,LS,CB"
+"Pikeman","Human",1,2,3,95,330,"Stabthrough",1,"Consecrate",2,"Block",4,"cr_pikeman_1.png","Mz,LS,CB"
+"Scout","Human",1,2,3,86,300,"Block",1,"Consecrate",1,"Delay",1,"cr_scout_1.jpg","Mz,LS,CB"
+"Zealot","Human",1,2,4,105,360,"Ambush",1,"Delay",1,"Counter",4,"cr_zealot_1.jpg","Mz,LS,CB"
+"","",,,,,,"",,"",,"",,"",""

@@ -1,0 +1,16 @@
+SkillName,Type,Power,CanLearn3,CanLearn4,CanLearn5,RuneAvailable,Rune,CreatureExclusive,Creature,FactionExclusive,Faction
+"Ambush","Self Buff",2,1,1,1,1,"Ambush Rune",0,,0,
+"Assassinate","Assassinate",4,1,1,1,1,"Deception Rune",0,,0,
+"Block","Tank",2,1,1,1,1,"Block Rune",0,,0,
+"Cloudburst","Delay",3,0,1,1,1,"Lightning Rune",0,,0,
+"Consecrate","CMRB",2,0,1,1,1,"Consecrate Rune",0,,1,"Faen"
+"Counter","Tank",1,1,1,1,1,"Counter Rune",0,,0,
+"Delay","Delay",4,0,1,1,1,"Delay Rune",0,,0,
+"Freezing Field","Delay",5,0,0,0,0,,1,"Aquarius",0,
+"Frost Blade","Delay",5,0,1,1,0,,0,,0,
+"Hibernate","Heal",5,0,0,0,0,,1,"Aquarius",0,
+"Ice Arrow","Delay",2,1,1,1,1,"Ice Rune",0,,0,
+"Meteor","DMG",1,1,1,1,1,"Fire Rune",0,,0,
+"Stabthrough","Curse",3,1,1,1,1,"Stabthrough Rune",0,,0,
+"Weakness","Debuff",3,1,1,1,1,"Weakness Rune",0,,0,
+"","",,,,,,"",,,,
