@@ -1,223 +1,222 @@
-CreatureName,Faction,StarRating,DelayTimer,Cost,BaseAtk,BaseHP,Level0Skill,Level0SkillPoint,Level5Skill,Level5SkillPoint,Level10Skill,Level10SkillPoint,Image,Source,Code
-Alice,Faen,5,4,22,278,1322,Mass Heal,10,Immunity,8,Purge,,cr_alice_1.jpg,,alice
-Angel Prime,Human,5,4,16,375,1080,Bullseye,,Dodge,9,Ignite Soul,,cr_angelprime_1.jpg,,angelprime
-Apprentice,Human,1,2,4,135,357,Weakness,1,Meteor,2,Ice Arrow,4,cr_apprentice_1.jpg,"Mz,LS,CB",apprentice
-Aquarius,Human,5,4,23,285,1355,Frost Blade,10,Freezing Field,,Hibernate,,cr_aquarius_1.jpg,"EB,HE",aquarius
-Arcane Hunter,Human,4,4,13,260,815,Battleblow,4,Ambush,7,Dodge,8,cr_arcanehunter_1.jpg,,arcanehunter
-Arcane Knight,Faen,5,4,21,326,1264,Pyre,10,Surround,,Arcane Force,,cr_arcaneknight_1.jpg,,arcaneknight
-Arcane Master,Human,4,4,14,220,820,Dodge,2,(S)Retreat,,Fatigue,6,cr_arcanemaster_1.jpg,,arcanemaster
-Arcane Sage,Human,5,4,20,352,1086,Blaze,10,Sneak,9,Vacuum Bomb,,cr_arcanesage_1.jpg,,arcanesage
-Archdeva,Human,5,4,17,365,1375,Maji Shield,8,Retreat,,Mass Heal,8,cr_archdeva_1.jpg,,archdeva
-Archmage,Human,3,4,11,211,630,Cloudburst,5,Stabthrough,5,Consecrate,6,cr_archmage_1.jpg,,archmage
-Ares,Human,5,4,16,356,1206,Reflect,7,Dodge,8,Bloodlust,7,cr_ares_1.jpg,,ares
-Arrow Brave,Faen,4,4,12,255,799,Battleblow,5,Miasma,6,Dodge,5,cr_arrowbrave_1.jpg,,arrowbrave
-Ash Beast,Faen,5,4,16,320,1359,Mass Heal,6,Unbound,,Sweeping Blow,,cr_ashbeast_1.jpg,,ashbeast
-Ash Highguard,Faen,3,4,10,215,780,Immunity,4,Block,5,Restoration,6,cr_ashhighguard_1.jpg,,ashhighguard
-Axe Warden,Faen,5,4,20,342,1133,Battleblow,6,Rip,,Quash,,cr_axewarden_1.jpg,,axewarden
-Balthazar,Human,5,4,16,300,1347,Maji Shield,7,Humanity,7,Disposal,,cr_balthazar_1.jpg,,balthazar
-Bewitcher,Human,5,4,19,450,1225,Soul Split,,Dark Clone,,Revocation,,cr_bewitcher_1.jpg,,bewitcher
-Blood Elf,Faen,5,4,19,512,1244,Life Sap,7,Soul Snatch,7,Shatter Soul,,cr_bloodelf_1.jpg,,bloodelf
-Blossoms,Faen,5,4,18,296,1065,Dodge,7,Flourish,5,Pyre,10,cr_blossoms_1.jpg,,blossoms
-Border Guard,Human,4,6,13,260,1100,Stoneskin,,Consecrate,6,Reflect,6,cr_borderguard_1.jpg,,borderguard
-Border Ranger,Human,3,4,11,173,573,Battleblow,2,Assassinate,5,Sweeping Blow,,cr_borderranger_1.jpg,,borderranger
-Cancer,Human,5,6,21,301,1302,Block,10,Immunity,10,Rancor,,cr_cancer_1.jpg,,cancer
-Centaur Chief,Faen,4,4,12,262,850,Miasma,8,Block,7,Warlust,5,cr_centaurchief_1.jpg,,centaurchief
-Centaur Guide,Faen,3,4,11,145,584,Sprite Link,3,Mass Heal,4,Elven Salve,7,cr_centaurguide_1.jpg,,centaurguide
-Chimera,Human,4,2,12,248,1028,Dispel,6,Maji Shield,8,Atom Flare,7,cr_chimera_1.jpg,,chimera
-Cleric ,Human,4,4,12,181,655,Counter,4,Mass Heal,4,Humanity,7,cr_cleric_1.jpg,,cleric
-Colossus,Human,4,6,12,236,1260,Restoration,5,Immunity,5,Bloodrage,7,cr_colossus_1.jpg,,colossus
-Columbus,Human,5,4,20,322,1266,Safeguard,9,Frost Blade,,Surge,,cr_columbus_1.jpg,,columbus
-Creatureinal,Human,3,4,10,185,650,Consecrate,4,Cloudburst,5,Counter,6,cr_creatureinal_1.jpg,,creatureinal
-Dame Coldfire,Human,4,4,13,273,863,Ice Arrow,7,Pyre,5,Frost Blade,5,cr_damecoldfire_1.jpg,,damecoldfire
-Devotee,Human,3,2,11,181,676,Bless,6,Consecrate,5,Sage Advice,6,cr_devotee_1.jpg,,devotee
-Divine Knight,Human,3,4,9,183,650,Battleblow,4,Immunity,5,Counter,5,cr_divineknight_1.jpg,,divineknight
-Dragonlord,Faen,5,4,19,374,1325,Bless,10,Frost Armor,8,Immunity,8,cr_dragonlord_1.jpg,,dragonlord
-Dream Guide,Faen,4,4,14,304,862,Bless,6,Rebirth,6,Sprite Link,7,cr_dreamguide_1.jpg,,dreamguide
-Dream Healer,Faen,3,4,10,205,750,Holy Light,4,Mass Heal,4,Discord,4,cr_dreamhealer_1.jpg,,dreamhealer
-Druid,Faen,3,2,11,155,575,Ice Arrow,4,Weakness,3,Restoration,5,cr_druid_1.jpg,,druid
-Elementalist,Faen,3,4,9,192,678,Holy Light,4,Miasma,6,Cloudburst,6,cr_elementalist_1.jpg,,elementalist
-Empire Guard,Human,3,4,9,205,623,Battleblow,5,Reflect,3,Retaliate,5,cr_empireguard_1.jpg,,empireguard
-Fae Firstborn,Faen,5,4,17,345,1119,Frostbite,6,(D)Healthing Breath,,Rebirth,5,cr_faefirstborn_1.jpg,,faefirstborn
-Faen Guardian,Faen,3,4,9,122,600,Meteor,3,Restoration,4,Sprite Link,4,cr_faenguardian_1.jpg,,faenguardian
-Faen Marksman,Faen,3,4,9,168,472,Assassinate,5,Battleblow,5,Assassinate,7,cr_faenmarksman_1.jpg,,faenmarksman
-Faen Mesmer,Faen,4,6,13,217,1230,Bloodrage,8,Discord,5,Sprite Link,7,cr_faenmesmer_1.jpg,,faenmesmer
-Faen Rampager,Faen,4,6,13,258,1079,Delay,1,Block,8,Restoration,8,cr_faenrampager_1.jpg,,faenrampager
-Faen Ranger,Faen,3,4,11,160,676,Sprite Link,3,Delay,1,Elven Salve,5,cr_faenranger_1.jpg,,faenranger
-Fafnir,Human,5,6,18,350,1150,Dodge,5,Sweeping Blow,,Immunity,8,cr_fafnir_1.jpg,,fafnir
-Flame Brave,Faen,4,2,13,238,849,Meteor,5,Pyre,7,Blaze,6,cr_flamebrave_1.jpg,,flamebrave
-Flame Mage,Human,3,4,9,154,558,Incinerate,4,(S)Wild Pyre,4,Cloudburst,6,cr_flamemage_1.jpg,,flamemage
-Flame Witch,Human,3,2,9,158,555,Meteor,2,Blaze,2,Incinerate,5,cr_flamewitch_1.jpg,,flamewitch
-Frost Rager,Faen,3,4,11,150,538,Frost Armor,3,Restoration,6,Elven Salve,6,cr_frostrager_1.jpg,,frostrager
-Gaia,Faen,5,4,19,365,1188,Divine Grace,,Spite,,Revitalize,,cr_gaia_1.jpg,,gaia
-Grand Mage,Human,4,4,14,250,920,Stoneskin,,Reflect,4,Mass Heal,5,cr_grandmage_1.jpg,,grandmage
-Great Mystic,Human,5,6,16,242,1215,Incinerate,5,Blaze,7,Revive,,cr_greatmystic_1.jpg,,greatmystic
-Griffi-Knight,Human,4,4,14,240,840,Maji Shield,5,Humanity,5,Incinerate,8,cr_griffi-knight_1.jpg,,griffi-knight
-Hanuman,Faen,5,4,16,400,1350,Maji Shield,8,Holy Light,10,(S)Disposal,,cr_hanuman_1.jpg,,hanuman
-Henrietta,Faen,4,4,14,232,765,Mass Heal,6,Elven Salve,7,Cleanse,1,cr_henrietta_1.jpg,,henrietta
-Hippolyta,Faen,5,6,18,305,1276,S Retreat,,Recycle,2,Elven Salve,9,cr_hippolyta_1.jpg,,hippolyta
-Horned Beast,Faen,4,4,14,223,675,Immunity,7,Mass Heal,5,Dodge,6,cr_hornedbeast_1.jpg,,hornedbeast
-Horus,Faen,4,4,13,199,844,Thor's Rage,5,Block,7,Retaliate,8,cr_horus_1.jpg,,horus
-Icy Mage,Human,4,4,12,136,550,Frostbite,3,(S)Typhoon,5,Flurry,6,cr_icymage_1.jpg,,icymage
-Imperator,Human,5,4,21,266,1423,Stoneskin,,Sweeping Blow,,Amplify,,cr_imperator_1.jpg,,imperator
-Juggernaut,Human,4,4,12,296,997,Anger,4,Reflect,4,Restoration,7,cr_juggernaut_1.jpg,,juggernaut
-Kirtana,Human,5,4,19,325,975,Pyre,7,Tempest,8,Holy Shield,10,cr_kirtana_1.jpg,,kirtana
-Lady Liberty,Human,5,2,22,288,998,Sweeping Blow,,Unbound,,Lion Heart,,cr_ladyliberty_1.jpg,,ladyliberty
-Laurel,Faen,4,4,14,298,973,Battleblow,8,Weakness,8,Block,8,cr_laurel_1.jpg,,laurel
-Leo,Human,5,4,20,360,1122,Unbound,,Warlust,10,Roar,,cr_leo_1.jpg,,leo
-Libra,Faen,5,4,21,322,1288,Weakness,10,Sweeping Blow,,Balance,,cr_libra_1.jpg,,libra
-Light Brave,Faen,4,4,14,205,775,Bolt,8,Rebirth,6,Dodge,8,cr_lightbrave_1.jpg,,lightbrave
-Lucky Sage,Faen,5,4,19,398,1145,S Retreat,,Rebirth,9,Silver Starfall,10,cr_luckysage_1.jpg,,luckysage
-Magic Weaver,Faen,3,2,10,110,484,Mass Heal,4,Meteor,5,Incinerate,4,cr_magicweaver_1.jpg,,magicweaver
-Mariner,Human,4,4,13,235,1012,Frostbite,5,Frost Armor,6,Soul Reap,6,cr_mariner_1.jpg,,mariner
-Marksman,Human,1,2,4,110,370,Assassinate,2,Assassinate,4,Cloudburst,2,cr_marksman_1.jpg,"Mz,LS,CB",marksman
-Master Guide,Faen,4,4,14,276,797,Holy Light,4,Elven Salve,5,Delay,2,cr_masterguide_1.jpg,,masterguide
-Michael,Human,4,4,14,312,795,Bullseye,,Warlust,8,Holy Shield,7,cr_michael_1.jpg,,michael
-Mimir's Tree,Faen,5,6,16,354,1384,Battleblow,6,Block,8,Immunity,8,cr_mimir'stree_1.jpg,,mimir'stree
-Moon Guardian,Faen,5,4,15,260,1197,Reflect,6,Sneak,8,Stoneskin,,cr_moonguardian_1.jpg,,moonguardian
-Moon Walker,Faen,4,4,12,285,920,Miasma,7,Reflect,4,Picking Off,7,cr_moonwalker_1.jpg,,moonwalker
-Mythril Drone,Human,5,4,19,566,1520,Mythril,,Immunity,8,Spellbinder,,cr_mythrildrone_1.jpg,,mythrildrone
-Naga Mistress,Faen,4,4,14,205,805,Ice Arrow,7,Mass Heal,6,Tempest,5,cr_nagamistress_1.jpg,,nagamistress
-Null,Human,0,0,0,0,0,Null,0,Null,0,Null,0,Null,Null,null
-Oracle,Human,4,4,14,175,800,Bless,10,Mass Heal,6,Sage Advice,7,cr_oracle_1.jpg,,oracle
-Paladin,Human,4,4,12,293,857,Ambush,6,Anger,8,Bullseye,,cr_paladin_1.jpg,,paladin
-Pale Dragon,Faen,4,6,13,281,1087,Miasma,6,Reflect,6,Sprite Link,6,cr_paledragon_1.jpg,,paledragon
-Paragon,Human,5,4,19,450,1355,Sage Advice,10,Delay,3,Torment,,cr_paragon_1.jpg,,paragon
-Pegasus,Faen,3,4,11,127,588,Bolt,2,Thunderbolt,2,Dodge,5,cr_pegasus_1.jpg,,pegasus
-Pegasus Lord,Faen,4,4,13,300,834,Miasma,6,Cloudburst,7,Restoration,8,cr_pegasuslord_1.jpg,,pegasuslord
-Phantom Rogue,Human,3,4,8,198,785,Assassinate,3,Dodge,4,Battleblow,4,cr_phantomrogue_1.jpg,,phantomrogue
-Phoenix,Faen,5,4,16,340,1291,Pyre,8,Restoration,7,Rebirth,8,cr_phoenix_1.jpg,,phoenix
-Pikeman,Human,1,2,3,95,330,Stabthrough,1,Consecrate,2,Block,4,cr_pikeman_1.jpg,"Mz,LS,CB",pikeman
-Pious Warden,Human,3,4,9,235,666,Weakness,5,Reflect,3,Consecrate,5,cr_piouswarden_1.jpg,,piouswarden
-Pontiff,Human,5,4,15,293,1284,Safeguard,7,Frost Armor,4,Rage Boost,6,cr_pontiff_1.jpg,,pontiff
-Prima Donna,Human,4,2,14,276,833,Discord,9,Dodge,7,Flurry,8,cr_primadonna_1.jpg,,primadonna
-Royal Dancer,Human,4,4,13,215,840,Sneak,5,Pursuit,5,Flurry,8,cr_royaldancer_1.jpg,,royaldancer
-Royal Dragon,Human,4,4,14,260,900,Battleblow,4,Stoneskin,,Sage Advice,6,cr_royaldragon_1.jpg,,royaldragon
-Royal Griffin,Human,3,4,11,182,585,(S)Thunderbolt,2,Rebirth,2,Reflect,3,cr_royalgriffin_1.jpg,,royalgriffin
-Royal Knight,Human,4,4,13,235,880,Block,7,Battleblow,5,Humanity,6,cr_royalknight_1.jpg,,royalknight
-Sagittarius,Faen,5,4,19,344,1066,Dodge,7,Picking Off,10,Arrow Split,,cr_sagittarius_1.jpg,,sagittarius
-Santa Baus,Human,5,4,18,333,1322,Stoneskin,,Frost Armor,10,Merry X-mas,,cr_santabaus_1.jpg,,santabaus
-Satyr Sentry,Faen,4,4,14,260,980,Miasma,6,Sprite Link,5,Elven Salve,6,cr_satyrsentry_1.jpg,,satyrsentry
-Scout,Human,1,2,3,86,300,Block,1,Consecrate,1,Delay,1,cr_scout_1.jpg,"Mz,LS,CB",scout
-Sea Wizard,Faen,5,4,19,375,1411,Tempest,8,Sweeping Blow,,Frost Blade,10,cr_seawizard_1.jpg,,seawizard
-Sentry Angel,Human,4,6,12,233,780,Consecrate,6,Restoration,7,Frost Armor,5,cr_sentryangel_1.jpg,,sentryangel
-Seraph,Human,4,4,13,281,1043,Anger,7,Restoration,6,Unbound,,cr_seraph_1.jpg,,seraph
-Shinryu,Human,5,4,18,356,1325,Rain Dance,,Maelstrom,,Dragon Ascencion,,cr_shinryu_1.jpg,,shinryu
-Swordmaster,Human,4,2,13,147,855,Frost Armor,3,Sweeping Blow,,Maji Shield,6,cr_swordmaster_1.jpg,,swordmaster
-Sylph,Human,5,4,22,311,1231,Thor's Rage,10,Immunity,7,Dodge,9,cr_sylph_1.jpg,,sylph
-Techno-Chief,Human,4,4,13,230,1050,Sage Advice,4,Bloodlust,3,Sweeping Blow,,cr_techno-chief_1.jpg,,techno-chief
-Titania,Human,5,4,15,270,1125,Ambush,9,Chainstrike,7,Rebirth,7,cr_titania_1.jpg,,titania
-Treant Elder,Faen,4,4,13,270,820,Restoratino,6,Picking Off,6,Mass Heal,6,cr_treantelder_1.jpg,,treantelder
-Treant Guide,Faen,3,4,10,160,588,Mass Heal,3,Elven Salve,4,Mass Heal,5,cr_treantguide_1.jpg,,treantguide
-Treant Ranger,Faen,3,4,10,125,800,Counter,7,Restoration,6,Retaliate,6,cr_treantranger_1.jpg,,treantranger
-Treant Weaver,Faen,3,4,10,184,617,Restoration,4,Cloudburst,4,Retaliate,6,cr_treantweaver_1.jpg,,treantweaver
-Valkyrie,Faen,4,2,14,312,985,Bullseye,,Dodge,7,Wing of Aegis,,cr_valkyrie_1.jpg,,valkyrie
-Voltic Priest,Faen,3,4,9,136,620,Cloudburst,2,Holy Light,5,Elven Salve,5,cr_volticpriest_1.jpg,,volticpriest
-Wood Stalker,Faen,3,2,10,186,716,Stabthrough,4,Assassinate,5,Miasma,6,cr_woodstalker_1.jpg,,woodstalker
-Yggdryad,Faen,5,4,17,315,1261,Safeguard,7,Dodge,6,Delay,2,cr_yggdryad_1.jpg,,yggdryad
-Zealot,Human,1,2,4,105,360,Ambush,1,Delay,1,Counter,4,cr_zealot_1.jpg,"Mz,LS,CB",zealot
-Blightghast,Mortii,3,4,10,255,822,Bane 6,,Plague 6,,Unholy Pact 5,,cr_blightghast_1.jpg,,blightghast
-Bloodletter,Mortii,5,4,16,381,1410,Life Sap 6,,Tit for Tat 7,,Stoneskin,,cr_bloodletter_1.jpg,,bloodletter
-Bloody Baron,Mortii,3,4,11,171,723,Counter 4,,Life Sap 7,,Death March 5,,cr_bloodybaron_1.jpg,,bloodybaron
-Bloody Lord,Mortii,4,4,13,241,728,Dodge 4,,Soul Swap 8,,Godswill 7,,cr_bloodylord_1.jpg,,bloodylord
-Bone Mage,Mortii,3,2,10,122,520,Meteor 4,,(D)Pyre Bomb 4,,Rebirth 7,,cr_bonemage_1.jpg,,bonemage
-Cave Dragon,Mortii,4,4,13,240,950,Flaming 3,,Rip,,Fatigue 8,,cr_cavedragon_1.jpg,,cavedragon
-Dahlia,Mortii,5,6,14,232,1155,Sacrifice 6,,Curse 8,,Recycle 2,,cr_dahlia_1.jpg,,dahlia
-Dark Assassin,Mortii,3,2,10,165,608,Dodge 3,,Ambush 3,,Battleblow 7,,cr_darkassassin_1.jpg,,darkassassin
-Dark Gargoyle,Mortii,3,4,9,182,728,Ambush 2,,Reflect 2,,Restoration 5,,cr_darkgargoyle_1.jpg,,darkgargoyle
-Dark Witch,Mortii,3,4,10,180,648,(S)Voodoo 8,,Unholy Pact 5,,Curse 6,,cr_darkwitch_1.jpg,,darkwitch
-Death Knight,Mortii,5,2,15,360,1125,Ambush 8,,Assassinate 10,,Rebirth 8,,cr_deathknight_1.jpg,,deathknight
-Death's Angel,Mortii,5,6,21,265,1267,[D] Instakill,,[S] Disposal,,Rebirth 8,,cr_death'sangel_1.jpg,,death'sangel
-Delilah,Mortii,4,4,14,211,866,Discord 10,,Dodge 7,,Soul Swap 10,,cr_delilah_1.jpg,,delilah
-Demonic Templar,Mortii,4,2,13,311,905,Rip,,Sweeping Blow,,Rebirth 6,,cr_demonictemplar_1.jpg,,demonictemplar
-Dullahan,Mortii,4,4,12,252,850,Stoneskin,,Battleblow 5,,Rebirth 5,,cr_dullahan_1.jpg,,dullahan
-Dusk Huntress,Mortii,5,4,21,364,1211,Reflect 10,,Dodge 9,,Delay 4,,cr_duskhuntress_1.jpg,,duskhuntress
-Evil Eye,Mortii,3,4,9,215,675,Contagion 6,,Bane 6,,Assassinate 7,,cr_evileye_1.jpg,,evileye
-Eye of Jonara,Mortii,4,4,12,250,882,Soul Swap 6,,Picking Off 8,,Discord 8,,cr_eyeofjonara_1.jpg,,eyeofjonara
-Frost Caller,Mortii,3,4,10,146,553,Frostbite 3,,Curse 5,,Fatigue 4,,cr_frostcaller_1.jpg,,frostcaller
-Gemini,Mortii,5,4,19,266,1055,Pyre 10,,Tempest 10,,Double Trouble,,cr_gemini_1.jpg,,gemini
-Ghostly Judge,Mortii,4,4,13,310,852,Venom Edge 7,,Reflect 5,,Godswill 6,,cr_ghostlyjudge_1.jpg,,ghostlyjudge
-Gorgon,Mortii,5,6,14,285,1277,Curse 7,,Delay 3,,(S)Disposal,,cr_gorgon_1.jpg,,gorgon
-Harbinger,Mortii,4,4,12,219,721,Soul Swap 6,,Dodge 6,,Rebirth 6,,cr_harbinger_1.jpg,,harbinger
-Hell Knight,Mortii,4,4,13,296,934,Battleblow 6,,Unbound,,Unholy Pact 6,,cr_hellknight_1.jpg,,hellknight
-Hellwolf,Mortii,4,6,12,162,700,Meteor 8,,Death March 4,,(S)Instakill,,cr_hellwolf_1.jpg,,hellwolf
-Imp Lord,Mortii,3,4,9,171,694,Bolt 5,,Afflict 4,,Meteor 7,,cr_implord_1.jpg,,implord
-Jormungand,Mortii,5,4,19,478,1535,Stoneskin,,Reflect 10,,Dispel 9,,cr_jormungand_1.jpg,,jormungand
-Jormungand,Mortii,5,4,19,478,1535,Stoneskin,,Reflect 10,,Dispel 9,,cr_jormungand_1.jpg,,jormungand
-Killer Queen,Mortii,5,4,19,245,1157,Soul Swap 10,,Shatter Soul,,Guilt,,cr_killerqueen_1.jpg,,killerqueen
-Lilith,Mortii,5,4,19,387,1285,Discord 7,,Shatter Soul,,Godswill 9,,cr_lilith_1.jpg,,lilith
-Lord Bones,Mortii,5,4,21,512,1045,Rebirth 4,,Battleblow 5,,Soul Snatch 8,,cr_lordbones_1.jpg,,lordbones
-Lycanthrope,Mortii,4,2,13,278,822,Life 6,,Battleblow 5,,Dodge 6,,cr_lycanthrope_1.jpg,,lycanthrope
-Magmus,Mortii,5,6,17,350,1349,Battleblow 6,,Rip,,Immunity 8,,cr_magmus_1.jpg,,magmus
-Manticore,Mortii,3,2,11,160,575,Cloudburst 4,,Rebirth 5,,Bullseye,,cr_manticore_1.jpg,,manticore
-Necrotic Naga,Mortii,3,4,11,184,700,Dodge 2,,Bane 6,,Delay 1,,cr_necroticnaga_1.jpg,,necroticnaga
-Night Terror,Mortii,3,4,11,235,648,(S)Hobble 2,,Bane 7,,Reflect 6,,cr_nightterror_1.jpg,,nightterror
-Phantom Liedge,Mortii,5,4,18,363,1275,Sweeping Blow,,Seals,,Life Sap 8,,cr_phantomliedge_1.jpg,,phantomliedge
-Pisces,Mortii,5,4,20,302,1152,Immunity 7,,Rebirth 9,,Mind Fog,,cr_pisces_1.jpg,,pisces
-Pit Dragon,Mortii,5,4,15,275,1350,Rebirth 6,,Unbound,,Bullseye,,cr_pitdragon_1.jpg,,pitdragon
-Pit Lord,Mortii,4,4,12,223,900,Bane 6,,Life Sap 6,,Unholy Pact 7,,cr_pitlord_1.jpg,,pitlord
-Pit Minion,Mortii,3,2,11,195,567,Soul Swap 5,,Bane 5,,Tempest 5,,cr_pitminion_1.jpg,,pitminion
-Pit Priest,Mortii,4,6,12,295,1252,Blaze 4,,Restoration 6,,Reflect 5,,cr_pitpriest_1.jpg,,pitpriest
-Plague Dragon,Mortii,4,6,13,240,854,Frostbite 5,,Bane 8,,Death March 6,,cr_plaguedragon_1.jpg,,plaguedragon
-Queen Temptress,Mortii,4,4,13,186,879,Dodge 5,,Immunity 5,,Osmose,,cr_queentemptress_1.jpg,,queentemptress
-Revenant,Mortii,5,6,17,325,1358,Picking Off 8,,Retreat,,Immunity 6,,cr_revenant_1.jpg,,revenant
-Snow Harlot,Mortii,5,4,19,325,1150,Mass Heal 9,,Tempest 8,,Ice Coffin,,cr_snowharlot_1.jpg,,snowharlot
-Spirit Siren,Mortii,5,4,16,310,1204,Curse 6,,Seals,,Rebirth 7,,cr_spiritsiren_1.jpg,,spiritsiren
-Terror Dragon,Mortii,5,4,15,364,1290,Stoneskin,,Reflect 8,,Warlust 9,,cr_terrordragon_1.jpg,,terrordragon
-Thalassa,Mortii,5,6,14,240,1325,Bane 6,,Death March 7,,Recycle 1,,cr_thalassa_1.jpg,,thalassa
-The Puppeteer,Mortii,4,4,14,198,623,Death March 7,,Godswill 8,,Death Gaze,,cr_thepuppeteer_1.jpg,,thepuppeteer
-The Unseen,Mortii,3,4,9,231,618,(D)Tomb Traps 4,,(S)Typhoon 3,,Rebirth 5,,cr_theunseen_1.jpg,,theunseen
-Undying Will,Mortii,5,4,16,354,1280,Blaze 7,,Rebirth 5,,(D)Instakill,,cr_undyingwill_1.jpg,,undyingwill
-Wild Efreet,Mortii,3,4,11,166,615,Flaming 6,,Detonate 6,,(D)Pyre Bomb 6,,cr_wildefreet_1.jpg,,wildefreet
-Abaddon,Neander,5,6,17,362,1198,Thor's Rage 7,,Retaliate 8,,Immunity 9,,cr_abaddon_1.jpg,,abaddon
-Alert Guard,Neander,3,2,11,210,640,Block 5,,Battleblow 8,,Stoneskin,,cr_alertguard_1.jpg,,alertguard
-Anathema,Neander,5,4,16,325,1375,Gas Cloud 8,,Stoneskin,,Bullseye,,cr_anathema_1.jpg,,anathema
-Blood Shaman,Neander,3,4,9,156,649,Incinerate 3,,Weakness 6,,Feral Fever 5,,cr_bloodshaman_1.jpg,,bloodshaman
-Blood Soldier,Neander,3,2,11,185,595,Bloodlust 5,,Restoration 4,,Block 7,,cr_bloodsoldier_1.jpg,,bloodsoldier
-Blood Warlock,Neander,3,4,9,175,580,Bless 7,,Gas Cloud 5,,Mass Heal 6,,cr_bloodwarlock_1.jpg,,bloodwarlock
-Capricorn,Neander,5,2,20,383,1164,Toxicity 9,,Dodge 10,,Fervent,,cr_capricorn_1.jpg,,capricorn
-Cyclops,Neander,4,6,14,246,982,(S)Lethargy 5,,Sweeping Blow,,S Instakill,,cr_cyclops_1.jpg,,cyclops
-Desert Sting,Neander,3,4,9,186,667,Ravage 5,,Stinger 6,,Ambush 5,,cr_desertsting_1.jpg,,desertsting
-Easter Bunny,Neander,5,4,20,311,1088,Rebirth 5,,Bloodrage 10,,S Mass Charm,,cr_easterbunny_1.jpg,,easterbunny
-Feline Lurker,Neander,3,4,10,205,684,S Lethargy 4,,Bloodlust 4,,Battleblow 7,,cr_felinelurker_1.jpg,,felinelurker
-Fenrir,Neander,4,2,14,288,986,Restoration 10,,Dodge 7,,Battleblow 8,,cr_fenrir_1.jpg,,fenrir
-Fire Lizard,Neander,3,2,10,155,554,Meteor 4,,Gas Cloud 2,,Detonate 4,,cr_firelizard_1.jpg,,firelizard
-Flame Master,Neander,4,4,14,253,900,Pyre 6,,Life Sap 6,,Feral Fever 7,,cr_flamemaster_1.jpg,,flamemaster
-Graboid,Neander,4,6,14,269,1154,Stoneskin,,Ravage 7,,Sweeping Blow,,cr_graboid_1.jpg,,graboid
-Griffin Rider,Neander,4,2,12,243,937,Dodge 5,,Assassinate 8,,Life Sap 7,,cr_griffinrider_1.jpg,,griffinrider
-Harpy Queen,Neander,3,4,9,194,685,Gas Cloud 3,,Ravage 7,,Delay 1,,cr_harpyqueen_1.jpg,,harpyqueen
-Hippo Raider,Neander,3,6,10,195,690,Battleblow 4,,РAtrophy 6,,Earth Totem 6,,cr_hipporaider_1.jpg,,hipporaider
-Howling King,Neander,4,4,12,253,890,Ravage 6,,Reflect 4,,Bloodlust 6,,cr_howlingking_1.jpg,,howlingking
-Icy Huntress,Neander,4,4,14,245,935,Ambush 5,,Earth Totem 6,,Delay 2,,cr_icyhuntress_1.jpg,,icyhuntress
-Kirin,Neander,4,4,13,189,821,Pyre 8,,Battleblow 7,,Ambush 10,,cr_kirin_1.jpg,,kirin
-Kitsune,Neander,5,4,19,387,1395,Danse Macabre,,Unbound,,Gemini,,cr_kitsune_1.jpg,,kitsune
-Kumiho,Neander,5,4,19,365,1305,Demonization,,Rebirth 10,,Gemini,,cr_kumiho_1.jpg,,kumiho
-Lazy Guard,Neander,3,4,11,180,794,Venom Edge 4,,Block 7,,Dodge 6,,cr_lazyguard_1.jpg,,lazyguard
-Mammoth Rider,Neander,4,6,13,284,1223,Block 2,,Retaliate 6,,Rip,,cr_mammothrider_1.jpg,,mammothrider
-Neamazon,Neander,4,6,13,260,964,Bloodlust 7,,Feral Fever 5,,Counter 10,,cr_neamazon_1.jpg,,neamazon
-Nean Raptor,Neander,4,4,14,250,1106,Dodge 4,,Maji Shield 6,,Rip,,cr_neanraptor_1.jpg,,neanraptor
-Neander Giant,Neander,4,6,12,225,1071,Retaliate 6,,Restoration 6,,Anger 7,,cr_neandergiant_1.jpg,,neandergiant
-Nidhogg,Neander,5,4,17,290,1375,Earth Totem 10,,Stoneskin,,Delay 3,,cr_nidhogg_1.jpg,,nidhogg
-Night Slayer,Neander,5,4,21,355,1211,Battleblow 6,,Sweeping Blow,,Onslaught,,cr_nightslayer_1.jpg,,nightslayer
-Oinari,Neander,5,6,20,215,1015,Feral Fever 10,,Rebirth 7,,[S] Resurrect,,cr_oinari_1.jpg,,oinari
-Ophiuchus,Neander,4,4,13,223,625,Gas Cloud 6,,Dodge 7,,Meteor Rain,,cr_ophiuchus_1.jpg,,ophiuchus
-Panther Chief,Neander,4,4,13,260,896,Anger 5,,Warlust 8,,Life Sap 8,,cr_pantherchief_1.jpg,,pantherchief
-Panther Guard,Neander,3,2,10,189,648,Stabthrough 4,,Bloodlust 4,,Life Sap 6,,cr_pantherguard_1.jpg,,pantherguard
-Quetzacoatl,Neander,5,4,17,340,1212,Plague 8,,Weakness 10,,Rebirth 9,,cr_quetzacoatl_1.jpg,,quetzacoatl
-Ridge Hunter,Neander,5,4,19,359,1265,Sweeping Blow,,Dodge 6,,Soul Snatch 7,,cr_ridgehunter_1.jpg,,ridgehunter
-Rite Master,Neander,3,2,11,175,711,Block 4,,Anger 5,,Restoration 5,,cr_ritemaster_1.jpg,,ritemaster
-Sekhmet,Neander,5,6,15,279,1611,Life Sap 6,,Bloodrage 8,,Unbound,,cr_sekhmet_1.jpg,,sekhmet
-Spider Queen,Neander,5,6,16,360,1267,Venom Edge 8,,Ravage 9,,Immunity 9,,cr_spiderqueen_1.jpg,,spiderqueen
-Tauro General,Neander,4,6,12,280,1102,Battleblow 5,,Anger 6,,Restoration 7,,cr_taurogeneral_1.jpg,,taurogeneral
-Tauros Elder,Neander,4,4,13,255,842,Battleblow 7,,Block 7,,Earth Totem 7,,cr_tauroselder_1.jpg,,tauroselder
-Taurus,Neander,5,4,20,332,1350,Nobility 10,,Earth Totem 10,,Omega Impact,,cr_taurus_1.jpg,,taurus
-The Twins,Neander,4,4,14,247,712,Stoneskin,,Twin Defense,,Twin Terror,,cr_thetwins_1.jpg,,thetwins
-Troll Guard,Neander,3,4,10,155,800,Block 5,,Flaming 5,,Earth Totem 6,,cr_trollguard_1.jpg,,trollguard
-Troll Mage,Neander,3,4,10,220,753,(D)Backdraft 5,,Anger 6,,Bloodlust 6,,cr_trollmage_1.jpg,,trollmage
-Troll Scout,Neander,3,6,9,203,700,Ambush 6,,Ravage 6,,Bloodlust 7,,cr_trollscout_1.jpg,,trollscout
-Tydal Siren,Neander,5,4,14,216,1151,Tempest 5,,Discord 7,,Rebirth 7,,cr_tydalsiren_1.jpg,,tydalsiren
-Ursa Major,Neander,4,4,13,245,915,Stabthrough 7,,Frost Armor 7,,Anger 6,,cr_ursamajor_1.jpg,,ursamajor
-Venom Tyrant,Neander,5,4,15,335,1330,Sacrifice 8,,Gas Cloud 8,,Restoration 9,,cr_venomtyrant_1.jpg,,venomtyrant
-Warband Chief,Neander,4,6,13,245,838,Counter 7,,Ravage 7,,Feral Fever 6,,cr_warbandchief_1.jpg,,warbandchief
-Wolveria,Neander,4,2,14,215,844,Ambush 8,,Rage Boost 5,,Feral Fever 8,,cr_wolveria_1.jpg,,wolveria
-Year Beast,Neander,5,4,19,25,1067,Picking Off 6,,Pursuit 7,,Menace,,cr_yearbeast_1.jpg,,yearbeast
-Yeti,Neander,5,4,19,465,1498,Restoration 9,,Tempest 9,,Bellow,,cr_yeti_1.jpg,,yeti
+CreatureName,Faction,StarRating,DelayTimer,Cost,BaseAtk0,BaseHP0,BaseAtk5,BaseHP5,BaseAtk10,BaseHP10,BaseAtk15,BaseHP15,Level0Skill,Level0SkillPoint,Level5Skill,Level5SkillPoint,Level10Skill,Level10SkillPoint,Image,Source,Code
+Abaddon,Neander,5,6,17,362,1198,10000,5000,,,,,Thor's Rage 7,,Retaliate 8,,Immunity 9,,cr_abaddon_1.jpg,,abaddon
+Alert Guard,Neander,3,2,11,210,640,,,,,,,Block 5,,Battleblow 8,,Stoneskin,,cr_alertguard_1.jpg,,alertguard
+Alice,Faen,5,4,22,278,1322,,,,,,,Mass Heal,10,Immunity,8,Purge,,cr_alice_1.jpg,,alice
+Anathema,Neander,5,4,16,325,1375,,,,,,,Gas Cloud 8,,Stoneskin,,Bullseye,,cr_anathema_1.jpg,,anathema
+Angel Prime,Human,5,4,16,375,1080,,,,,,,Bullseye,,Dodge,9,Ignite Soul,,cr_angelprime_1.jpg,,angelprime
+Apprentice,Human,1,2,4,135,357,,,,,,,Weakness,1,Meteor,2,Ice Arrow,4,cr_apprentice_1.jpg,"Mz,LS,CB",apprentice
+Aquarius,Human,5,4,23,285,1355,,,,,,,Frost Blade,10,Freezing Field,,Hibernate,,cr_aquarius_1.jpg,"EB,HE",aquarius
+Arcane Hunter,Human,4,4,13,260,815,,,,,,,Battleblow,4,Ambush,7,Dodge,8,cr_arcanehunter_1.jpg,,arcanehunter
+Arcane Knight,Faen,5,4,21,326,1264,,,,,,,Pyre,10,Surround,,Arcane Force,,cr_arcaneknight_1.jpg,,arcaneknight
+Arcane Master,Human,4,4,14,220,820,,,,,,,Dodge,2,(S)Retreat,,Fatigue,6,cr_arcanemaster_1.jpg,,arcanemaster
+Arcane Sage,Human,5,4,20,352,1086,,,,,,,Blaze,10,Sneak,9,Vacuum Bomb,,cr_arcanesage_1.jpg,,arcanesage
+Archdeva,Human,5,4,17,365,1375,,,,,,,Maji Shield,8,Retreat,,Mass Heal,8,cr_archdeva_1.jpg,,archdeva
+Archmage,Human,3,4,11,211,630,,,,,,,Cloudburst,5,Stabthrough,5,Consecrate,6,cr_archmage_1.jpg,,archmage
+Ares,Human,5,4,16,356,1206,,,,,,,Reflect,7,Dodge,8,Bloodlust,7,cr_ares_1.jpg,,ares
+Arrow Brave,Faen,4,4,12,255,799,,,,,,,Battleblow,5,Miasma,6,Dodge,5,cr_arrowbrave_1.jpg,,arrowbrave
+Ash Beast,Faen,5,4,16,320,1359,,,,,,,Mass Heal,6,Unbound,,Sweeping Blow,,cr_ashbeast_1.jpg,,ashbeast
+Ash Highguard,Faen,3,4,10,215,780,,,,,,,Immunity,4,Block,5,Restoration,6,cr_ashhighguard_1.jpg,,ashhighguard
+Axe Warden,Faen,5,4,20,342,1133,,,,,,,Battleblow,6,Rip,,Quash,,cr_axewarden_1.jpg,,axewarden
+Balthazar,Human,5,4,16,300,1347,,,,,,,Maji Shield,7,Humanity,7,Disposal,,cr_balthazar_1.jpg,,balthazar
+Bewitcher,Human,5,4,19,450,1225,,,,,,,Soul Split,,Dark Clone,,Revocation,,cr_bewitcher_1.jpg,,bewitcher
+Blightghast,Mortii,3,4,10,255,822,,,,,,,Bane 6,,Plague 6,,Unholy Pact 5,,cr_blightghast_1.jpg,,blightghast
+Blood Elf,Faen,5,4,19,512,1244,,,,,,,Life Sap,7,Soul Snatch,7,Shatter Soul,,cr_bloodelf_1.jpg,,bloodelf
+Blood Shaman,Neander,3,4,9,156,649,,,,,,,Incinerate 3,,Weakness 6,,Feral Fever 5,,cr_bloodshaman_1.jpg,,bloodshaman
+Blood Soldier,Neander,3,2,11,185,595,,,,,,,Bloodlust 5,,Restoration 4,,Block 7,,cr_bloodsoldier_1.jpg,,bloodsoldier
+Blood Warlock,Neander,3,4,9,175,580,,,,,,,Bless 7,,Gas Cloud 5,,Mass Heal 6,,cr_bloodwarlock_1.jpg,,bloodwarlock
+Bloodletter,Mortii,5,4,16,381,1410,,,,,,,Life Sap 6,,Tit for Tat 7,,Stoneskin,,cr_bloodletter_1.jpg,,bloodletter
+Bloody Baron,Mortii,3,4,11,171,723,,,,,,,Counter 4,,Life Sap 7,,Death March 5,,cr_bloodybaron_1.jpg,,bloodybaron
+Bloody Lord,Mortii,4,4,13,241,728,,,,,,,Dodge 4,,Soul Swap 8,,Godswill 7,,cr_bloodylord_1.jpg,,bloodylord
+Blossoms,Faen,5,4,18,296,1065,,,,,,,Dodge,7,Flourish,5,Pyre,10,cr_blossoms_1.jpg,,blossoms
+Bone Mage,Mortii,3,2,10,122,520,,,,,,,Meteor 4,,(D)Pyre Bomb 4,,Rebirth 7,,cr_bonemage_1.jpg,,bonemage
+Border Guard,Human,4,6,13,260,1100,,,,,,,Stoneskin,,Consecrate,6,Reflect,6,cr_borderguard_1.jpg,,borderguard
+Border Ranger,Human,3,4,11,173,573,,,,,,,Battleblow,2,Assassinate,5,Sweeping Blow,,cr_borderranger_1.jpg,,borderranger
+Cancer,Human,5,6,21,301,1302,,,,,,,Block,10,Immunity,10,Rancor,,cr_cancer_1.jpg,,cancer
+Capricorn,Neander,5,2,20,383,1164,,,,,,,Toxicity 9,,Dodge 10,,Fervent,,cr_capricorn_1.jpg,,capricorn
+Cave Dragon,Mortii,4,4,13,240,950,,,,,,,Flaming 3,,Rip,,Fatigue 8,,cr_cavedragon_1.jpg,,cavedragon
+Centaur Chief,Faen,4,4,12,262,850,,,,,,,Miasma,8,Block,7,Warlust,5,cr_centaurchief_1.jpg,,centaurchief
+Centaur Guide,Faen,3,4,11,145,584,,,,,,,Sprite Link,3,Mass Heal,4,Elven Salve,7,cr_centaurguide_1.jpg,,centaurguide
+Chimera,Human,4,2,12,248,1028,,,,,,,Dispel,6,Maji Shield,8,Atom Flare,7,cr_chimera_1.jpg,,chimera
+Cleric ,Human,4,4,12,181,655,,,,,,,Counter,4,Mass Heal,4,Humanity,7,cr_cleric_1.jpg,,cleric
+Colossus,Human,4,6,12,236,1260,,,,,,,Restoration,5,Immunity,5,Bloodrage,7,cr_colossus_1.jpg,,colossus
+Columbus,Human,5,4,20,322,1266,,,,,,,Safeguard,9,Frost Blade,,Surge,,cr_columbus_1.jpg,,columbus
+Creatureinal,Human,3,4,10,185,650,,,,,,,Consecrate,4,Cloudburst,5,Counter,6,cr_creatureinal_1.jpg,,creatureinal
+Cyclops,Neander,4,6,14,246,982,,,,,,,(S)Lethargy 5,,Sweeping Blow,,S Instakill,,cr_cyclops_1.jpg,,cyclops
+Dahlia,Mortii,5,6,14,232,1155,,,,,,,Sacrifice 6,,Curse 8,,Recycle 2,,cr_dahlia_1.jpg,,dahlia
+Dame Coldfire,Human,4,4,13,273,863,,,,,,,Ice Arrow,7,Pyre,5,Frost Blade,5,cr_damecoldfire_1.jpg,,damecoldfire
+Dark Assassin,Mortii,3,2,10,165,608,,,,,,,Dodge 3,,Ambush 3,,Battleblow 7,,cr_darkassassin_1.jpg,,darkassassin
+Dark Gargoyle,Mortii,3,4,9,182,728,,,,,,,Ambush 2,,Reflect 2,,Restoration 5,,cr_darkgargoyle_1.jpg,,darkgargoyle
+Dark Witch,Mortii,3,4,10,180,648,,,,,,,(S)Voodoo 8,,Unholy Pact 5,,Curse 6,,cr_darkwitch_1.jpg,,darkwitch
+Death Knight,Mortii,5,2,15,360,1125,,,,,,,Ambush 8,,Assassinate 10,,Rebirth 8,,cr_deathknight_1.jpg,,deathknight
+Death's Angel,Mortii,5,6,21,265,1267,,,,,,,[D] Instakill,,[S] Disposal,,Rebirth 8,,cr_death'sangel_1.jpg,,death'sangel
+Delilah,Mortii,4,4,14,211,866,,,,,,,Discord 10,,Dodge 7,,Soul Swap 10,,cr_delilah_1.jpg,,delilah
+Demonic Templar,Mortii,4,2,13,311,905,,,,,,,Rip,,Sweeping Blow,,Rebirth 6,,cr_demonictemplar_1.jpg,,demonictemplar
+Desert Sting,Neander,3,4,9,186,667,,,,,,,Ravage 5,,Stinger 6,,Ambush 5,,cr_desertsting_1.jpg,,desertsting
+Devotee,Human,3,2,11,181,676,,,,,,,Bless,6,Consecrate,5,Sage Advice,6,cr_devotee_1.jpg,,devotee
+Divine Knight,Human,3,4,9,183,650,,,,,,,Battleblow,4,Immunity,5,Counter,5,cr_divineknight_1.jpg,,divineknight
+Dragonlord,Faen,5,4,19,374,1325,,,,,,,Bless,10,Frost Armor,8,Immunity,8,cr_dragonlord_1.jpg,,dragonlord
+Dream Guide,Faen,4,4,14,304,862,,,,,,,Bless,6,Rebirth,6,Sprite Link,7,cr_dreamguide_1.jpg,,dreamguide
+Dream Healer,Faen,3,4,10,205,750,,,,,,,Holy Light,4,Mass Heal,4,Discord,4,cr_dreamhealer_1.jpg,,dreamhealer
+Druid,Faen,3,2,11,155,575,,,,,,,Ice Arrow,4,Weakness,3,Restoration,5,cr_druid_1.jpg,,druid
+Dullahan,Mortii,4,4,12,252,850,,,,,,,Stoneskin,,Battleblow 5,,Rebirth 5,,cr_dullahan_1.jpg,,dullahan
+Dusk Huntress,Mortii,5,4,21,364,1211,,,,,,,Reflect 10,,Dodge 9,,Delay 4,,cr_duskhuntress_1.jpg,,duskhuntress
+Easter Bunny,Neander,5,4,20,311,1088,,,,,,,Rebirth 5,,Bloodrage 10,,S Mass Charm,,cr_easterbunny_1.jpg,,easterbunny
+Elementalist,Faen,3,4,9,192,678,,,,,,,Holy Light,4,Miasma,6,Cloudburst,6,cr_elementalist_1.jpg,,elementalist
+Empire Guard,Human,3,4,9,205,623,,,,,,,Battleblow,5,Reflect,3,Retaliate,5,cr_empireguard_1.jpg,,empireguard
+Evil Eye,Mortii,3,4,9,215,675,,,,,,,Contagion 6,,Bane 6,,Assassinate 7,,cr_evileye_1.jpg,,evileye
+Eye of Jonara,Mortii,4,4,12,250,882,,,,,,,Soul Swap 6,,Picking Off 8,,Discord 8,,cr_eyeofjonara_1.jpg,,eyeofjonara
+Fae Firstborn,Faen,5,4,17,345,1119,,,,,,,Frostbite,6,(D)Healthing Breath,,Rebirth,5,cr_faefirstborn_1.jpg,,faefirstborn
+Faen Guardian,Faen,3,4,9,122,600,,,,,,,Meteor,3,Restoration,4,Sprite Link,4,cr_faenguardian_1.jpg,,faenguardian
+Faen Marksman,Faen,3,4,9,168,472,,,,,,,Assassinate,5,Battleblow,5,Assassinate,7,cr_faenmarksman_1.jpg,,faenmarksman
+Faen Mesmer,Faen,4,6,13,217,1230,,,,,,,Bloodrage,8,Discord,5,Sprite Link,7,cr_faenmesmer_1.jpg,,faenmesmer
+Faen Rampager,Faen,4,6,13,258,1079,,,,,,,Delay,1,Block,8,Restoration,8,cr_faenrampager_1.jpg,,faenrampager
+Faen Ranger,Faen,3,4,11,160,676,,,,,,,Sprite Link,3,Delay,1,Elven Salve,5,cr_faenranger_1.jpg,,faenranger
+Fafnir,Human,5,6,18,350,1150,,,,,,,Dodge,5,Sweeping Blow,,Immunity,8,cr_fafnir_1.jpg,,fafnir
+Feline Lurker,Neander,3,4,10,205,684,,,,,,,S Lethargy 4,,Bloodlust 4,,Battleblow 7,,cr_felinelurker_1.jpg,,felinelurker
+Fenrir,Neander,4,2,14,288,986,,,,,,,Restoration 10,,Dodge 7,,Battleblow 8,,cr_fenrir_1.jpg,,fenrir
+Fire Lizard,Neander,3,2,10,155,554,,,,,,,Meteor 4,,Gas Cloud 2,,Detonate 4,,cr_firelizard_1.jpg,,firelizard
+Flame Brave,Faen,4,2,13,238,849,,,,,,,Meteor,5,Pyre,7,Blaze,6,cr_flamebrave_1.jpg,,flamebrave
+Flame Mage,Human,3,4,9,154,558,,,,,,,Incinerate,4,(S)Wild Pyre,4,Cloudburst,6,cr_flamemage_1.jpg,,flamemage
+Flame Master,Neander,4,4,14,253,900,,,,,,,Pyre 6,,Life Sap 6,,Feral Fever 7,,cr_flamemaster_1.jpg,,flamemaster
+Flame Witch,Human,3,2,9,158,555,,,,,,,Meteor,2,Blaze,2,Incinerate,5,cr_flamewitch_1.jpg,,flamewitch
+Frost Caller,Mortii,3,4,10,146,553,,,,,,,Frostbite 3,,Curse 5,,Fatigue 4,,cr_frostcaller_1.jpg,,frostcaller
+Frost Rager,Faen,3,4,11,150,538,,,,,,,Frost Armor,3,Restoration,6,Elven Salve,6,cr_frostrager_1.jpg,,frostrager
+Gaia,Faen,5,4,19,365,1188,,,,,,,Divine Grace,,Spite,,Revitalize,,cr_gaia_1.jpg,,gaia
+Gemini,Mortii,5,4,19,266,1055,,,,,,,Pyre 10,,Tempest 10,,Double Trouble,,cr_gemini_1.jpg,,gemini
+Ghostly Judge,Mortii,4,4,13,310,852,,,,,,,Venom Edge 7,,Reflect 5,,Godswill 6,,cr_ghostlyjudge_1.jpg,,ghostlyjudge
+Gorgon,Mortii,5,6,14,285,1277,,,,,,,Curse 7,,Delay 3,,(S)Disposal,,cr_gorgon_1.jpg,,gorgon
+Graboid,Neander,4,6,14,269,1154,,,,,,,Stoneskin,,Ravage 7,,Sweeping Blow,,cr_graboid_1.jpg,,graboid
+Grand Mage,Human,4,4,14,250,920,,,,,,,Stoneskin,,Reflect,4,Mass Heal,5,cr_grandmage_1.jpg,,grandmage
+Great Mystic,Human,5,6,16,242,1215,,,,,,,Incinerate,5,Blaze,7,Revive,,cr_greatmystic_1.jpg,,greatmystic
+Griffi-Knight,Human,4,4,14,240,840,,,,,,,Maji Shield,5,Humanity,5,Incinerate,8,cr_griffi-knight_1.jpg,,griffi-knight
+Griffin Rider,Neander,4,2,12,243,937,,,,,,,Dodge 5,,Assassinate 8,,Life Sap 7,,cr_griffinrider_1.jpg,,griffinrider
+Hanuman,Faen,5,4,16,400,1350,,,,,,,Maji Shield,8,Holy Light,10,(S)Disposal,,cr_hanuman_1.jpg,,hanuman
+Harbinger,Mortii,4,4,12,219,721,,,,,,,Soul Swap 6,,Dodge 6,,Rebirth 6,,cr_harbinger_1.jpg,,harbinger
+Harpy Queen,Neander,3,4,9,194,685,,,,,,,Gas Cloud 3,,Ravage 7,,Delay 1,,cr_harpyqueen_1.jpg,,harpyqueen
+Hell Knight,Mortii,4,4,13,296,934,,,,,,,Battleblow 6,,Unbound,,Unholy Pact 6,,cr_hellknight_1.jpg,,hellknight
+Hellwolf,Mortii,4,6,12,162,700,,,,,,,Meteor 8,,Death March 4,,(S)Instakill,,cr_hellwolf_1.jpg,,hellwolf
+Henrietta,Faen,4,4,14,232,765,,,,,,,Mass Heal,6,Elven Salve,7,Cleanse,1,cr_henrietta_1.jpg,,henrietta
+Hippo Raider,Neander,3,6,10,195,690,,,,,,,Battleblow 4,,РAtrophy 6,,Earth Totem 6,,cr_hipporaider_1.jpg,,hipporaider
+Hippolyta,Faen,5,6,18,305,1276,,,,,,,S Retreat,,Recycle,2,Elven Salve,9,cr_hippolyta_1.jpg,,hippolyta
+Horned Beast,Faen,4,4,14,223,675,,,,,,,Immunity,7,Mass Heal,5,Dodge,6,cr_hornedbeast_1.jpg,,hornedbeast
+Horus,Faen,4,4,13,199,844,,,,,,,Thor's Rage,5,Block,7,Retaliate,8,cr_horus_1.jpg,,horus
+Howling King,Neander,4,4,12,253,890,,,,,,,Ravage 6,,Reflect 4,,Bloodlust 6,,cr_howlingking_1.jpg,,howlingking
+Icy Huntress,Neander,4,4,14,245,935,,,,,,,Ambush 5,,Earth Totem 6,,Delay 2,,cr_icyhuntress_1.jpg,,icyhuntress
+Icy Mage,Human,4,4,12,136,550,,,,,,,Frostbite,3,(S)Typhoon,5,Flurry,6,cr_icymage_1.jpg,,icymage
+Imp Lord,Mortii,3,4,9,171,694,,,,,,,Bolt 5,,Afflict 4,,Meteor 7,,cr_implord_1.jpg,,implord
+Imperator,Human,5,4,21,266,1423,,,,,,,Stoneskin,,Sweeping Blow,,Amplify,,cr_imperator_1.jpg,,imperator
+Jormungand,Mortii,5,4,19,478,1535,,,,,,,Stoneskin,,Reflect 10,,Dispel 9,,cr_jormungand_1.jpg,,jormungand
+Juggernaut,Human,4,4,12,296,997,,,,,,,Anger,4,Reflect,4,Restoration,7,cr_juggernaut_1.jpg,,juggernaut
+Killer Queen,Mortii,5,4,19,245,1157,,,,,,,Soul Swap 10,,Shatter Soul,,Guilt,,cr_killerqueen_1.jpg,,killerqueen
+Kirin,Neander,4,4,13,189,821,,,,,,,Pyre 8,,Battleblow 7,,Ambush 10,,cr_kirin_1.jpg,,kirin
+Kirtana,Human,5,4,19,325,975,,,,,,,Pyre,7,Tempest,8,Holy Shield,10,cr_kirtana_1.jpg,,kirtana
+Kitsune,Neander,5,4,19,387,1395,,,,,,,Danse Macabre,,Unbound,,Gemini,,cr_kitsune_1.jpg,,kitsune
+Kumiho,Neander,5,4,19,365,1305,,,,,,,Demonization,,Rebirth 10,,Gemini,,cr_kumiho_1.jpg,,kumiho
+Lady Liberty,Human,5,2,22,288,998,,,,,,,Sweeping Blow,,Unbound,,Lion Heart,,cr_ladyliberty_1.jpg,,ladyliberty
+Laurel,Faen,4,4,14,298,973,,,,,,,Battleblow,8,Weakness,8,Block,8,cr_laurel_1.jpg,,laurel
+Lazy Guard,Neander,3,4,11,180,794,,,,,,,Venom Edge 4,,Block 7,,Dodge 6,,cr_lazyguard_1.jpg,,lazyguard
+Leo,Human,5,4,20,360,1122,,,,,,,Unbound,,Warlust,10,Roar,,cr_leo_1.jpg,,leo
+Libra,Faen,5,4,21,322,1288,,,,,,,Weakness,10,Sweeping Blow,,Balance,,cr_libra_1.jpg,,libra
+Light Brave,Faen,4,4,14,205,775,,,,,,,Bolt,8,Rebirth,6,Dodge,8,cr_lightbrave_1.jpg,,lightbrave
+Lilith,Mortii,5,4,19,387,1285,,,,,,,Discord 7,,Shatter Soul,,Godswill 9,,cr_lilith_1.jpg,,lilith
+Lord Bones,Mortii,5,4,21,512,1045,,,,,,,Rebirth 4,,Battleblow 5,,Soul Snatch 8,,cr_lordbones_1.jpg,,lordbones
+Lucky Sage,Faen,5,4,19,398,1145,,,,,,,S Retreat,,Rebirth,9,Silver Starfall,10,cr_luckysage_1.jpg,,luckysage
+Lycanthrope,Mortii,4,2,13,278,822,,,,,,,Life 6,,Battleblow 5,,Dodge 6,,cr_lycanthrope_1.jpg,,lycanthrope
+Magic Weaver,Faen,3,2,10,110,484,,,,,,,Mass Heal,4,Meteor,5,Incinerate,4,cr_magicweaver_1.jpg,,magicweaver
+Magmus,Mortii,5,6,17,350,1349,,,,,,,Battleblow 6,,Rip,,Immunity 8,,cr_magmus_1.jpg,,magmus
+Mammoth Rider,Neander,4,6,13,284,1223,,,,,,,Block 2,,Retaliate 6,,Rip,,cr_mammothrider_1.jpg,,mammothrider
+Manticore,Mortii,3,2,11,160,575,,,,,,,Cloudburst 4,,Rebirth 5,,Bullseye,,cr_manticore_1.jpg,,manticore
+Mariner,Human,4,4,13,235,1012,,,,,,,Frostbite,5,Frost Armor,6,Soul Reap,6,cr_mariner_1.jpg,,mariner
+Marksman,Human,1,2,4,110,370,,,,,,,Assassinate,2,Assassinate,4,Cloudburst,2,cr_marksman_1.jpg,"Mz,LS,CB",marksman
+Master Guide,Faen,4,4,14,276,797,,,,,,,Holy Light,4,Elven Salve,5,Delay,2,cr_masterguide_1.jpg,,masterguide
+Michael,Human,4,4,14,312,795,,,,,,,Bullseye,,Warlust,8,Holy Shield,7,cr_michael_1.jpg,,michael
+Mimir's Tree,Faen,5,6,16,354,1384,,,,,,,Battleblow,6,Block,8,Immunity,8,cr_mimir'stree_1.jpg,,mimir'stree
+Moon Guardian,Faen,5,4,15,260,1197,,,,,,,Reflect,6,Sneak,8,Stoneskin,,cr_moonguardian_1.jpg,,moonguardian
+Moon Walker,Faen,4,4,12,285,920,,,,,,,Miasma,7,Reflect,4,Picking Off,7,cr_moonwalker_1.jpg,,moonwalker
+Mythril Drone,Human,5,4,19,566,1520,,,,,,,Mythril,,Immunity,8,Spellbinder,,cr_mythrildrone_1.jpg,,mythrildrone
+Naga Mistress,Faen,4,4,14,205,805,,,,,,,Ice Arrow,7,Mass Heal,6,Tempest,5,cr_nagamistress_1.jpg,,nagamistress
+Neamazon,Neander,4,6,13,260,964,,,,,,,Bloodlust 7,,Feral Fever 5,,Counter 10,,cr_neamazon_1.jpg,,neamazon
+Nean Raptor,Neander,4,4,14,250,1106,,,,,,,Dodge 4,,Maji Shield 6,,Rip,,cr_neanraptor_1.jpg,,neanraptor
+Neander Giant,Neander,4,6,12,225,1071,,,,,,,Retaliate 6,,Restoration 6,,Anger 7,,cr_neandergiant_1.jpg,,neandergiant
+Necrotic Naga,Mortii,3,4,11,184,700,,,,,,,Dodge 2,,Bane 6,,Delay 1,,cr_necroticnaga_1.jpg,,necroticnaga
+Nidhogg,Neander,5,4,17,290,1375,,,,,,,Earth Totem 10,,Stoneskin,,Delay 3,,cr_nidhogg_1.jpg,,nidhogg
+Night's Slayer,Neander,5,4,21,355,1211,,,,,,,Battleblow 6,,Sweeping Blow,,Onslaught,,cr_night'sslayer_1.jpg,,night'sslayer
+Night Terror,Mortii,3,4,11,235,648,,,,,,,(S)Hobble 2,,Bane 7,,Reflect 6,,cr_nightterror_1.jpg,,nightterror
+Null,Human,0,0,0,0,0,,,,,,,Null,0,Null,0,Null,0,Null,Null,null
+Oinari,Neander,5,6,20,215,1015,,,,,,,Feral Fever 10,,Rebirth 7,,[S] Resurrect,,cr_oinari_1.jpg,,oinari
+Ophiuchus,Neander,4,4,13,223,625,,,,,,,Gas Cloud 6,,Dodge 7,,Meteor Rain,,cr_ophiuchus_1.jpg,,ophiuchus
+Oracle,Human,4,4,14,175,800,,,,,,,Bless,10,Mass Heal,6,Sage Advice,7,cr_oracle_1.jpg,,oracle
+Paladin,Human,4,4,12,293,857,,,,,,,Ambush,6,Anger,8,Bullseye,,cr_paladin_1.jpg,,paladin
+Pale Dragon,Faen,4,6,13,281,1087,,,,,,,Miasma,6,Reflect,6,Sprite Link,6,cr_paledragon_1.jpg,,paledragon
+Panther Chief,Neander,4,4,13,260,896,,,,,,,Anger 5,,Warlust 8,,Life Sap 8,,cr_pantherchief_1.jpg,,pantherchief
+Panther Guard,Neander,3,2,10,189,648,,,,,,,Stabthrough 4,,Bloodlust 4,,Life Sap 6,,cr_pantherguard_1.jpg,,pantherguard
+Paragon,Human,5,4,19,450,1355,,,,,,,Sage Advice,10,Delay,3,Torment,,cr_paragon_1.jpg,,paragon
+Pegasus,Faen,3,4,11,127,588,,,,,,,Bolt,2,Thunderbolt,2,Dodge,5,cr_pegasus_1.jpg,,pegasus
+Pegasus Lord,Faen,4,4,13,300,834,,,,,,,Miasma,6,Cloudburst,7,Restoration,8,cr_pegasuslord_1.jpg,,pegasuslord
+Phantom Liedge,Mortii,5,4,18,363,1275,,,,,,,Sweeping Blow,,Seals,,Life Sap 8,,cr_phantomliedge_1.jpg,,phantomliedge
+Phantom Rogue,Human,3,4,8,198,785,,,,,,,Assassinate,3,Dodge,4,Battleblow,4,cr_phantomrogue_1.jpg,,phantomrogue
+Phoenix,Faen,5,4,16,340,1291,,,,,,,Pyre,8,Restoration,7,Rebirth,8,cr_phoenix_1.jpg,,phoenix
+Pikeman,Human,1,2,3,95,330,,,,,,,Stabthrough,1,Consecrate,2,Block,4,cr_pikeman_1.jpg,"Mz,LS,CB",pikeman
+Pious Warden,Human,3,4,9,235,666,,,,,,,Weakness,5,Reflect,3,Consecrate,5,cr_piouswarden_1.jpg,,piouswarden
+Pisces,Mortii,5,4,20,302,1152,,,,,,,Immunity 7,,Rebirth 9,,Mind Fog,,cr_pisces_1.jpg,,pisces
+Pit Dragon,Mortii,5,4,15,275,1350,,,,,,,Rebirth 6,,Unbound,,Bullseye,,cr_pitdragon_1.jpg,,pitdragon
+Pit Lord,Mortii,4,4,12,223,900,,,,,,,Bane 6,,Life Sap 6,,Unholy Pact 7,,cr_pitlord_1.jpg,,pitlord
+Pit Minion,Mortii,3,2,11,195,567,,,,,,,Soul Swap 5,,Bane 5,,Tempest 5,,cr_pitminion_1.jpg,,pitminion
+Pit Priest,Mortii,4,6,12,295,1252,,,,,,,Blaze 4,,Restoration 6,,Reflect 5,,cr_pitpriest_1.jpg,,pitpriest
+Plague Dragon,Mortii,4,6,13,240,854,,,,,,,Frostbite 5,,Bane 8,,Death March 6,,cr_plaguedragon_1.jpg,,plaguedragon
+Pontiff,Human,5,4,15,293,1284,,,,,,,Safeguard,7,Frost Armor,4,Rage Boost,6,cr_pontiff_1.jpg,,pontiff
+Prima Donna,Human,4,2,14,276,833,,,,,,,Discord,9,Dodge,7,Flurry,8,cr_primadonna_1.jpg,,primadonna
+Queen Temptress,Mortii,4,4,13,186,879,,,,,,,Dodge 5,,Immunity 5,,Osmose,,cr_queentemptress_1.jpg,,queentemptress
+Quetzalcoatl,Neander,5,4,17,340,1212,,,,,,,Plague 8,,Weakness 10,,Rebirth 9,,cr_quetzalcoatl_1.jpg,,quetzalcoatl
+Revenant,Mortii,5,6,17,325,1358,,,,,,,Picking Off 8,,Retreat,,Immunity 6,,cr_revenant_1.jpg,,revenant
+Ridge Hunter,Neander,5,4,19,359,1265,,,,,,,Sweeping Blow,,Dodge 6,,Soul Snatch 7,,cr_ridgehunter_1.jpg,,ridgehunter
+Rite Master,Neander,3,2,11,175,711,,,,,,,Block 4,,Anger 5,,Restoration 5,,cr_ritemaster_1.jpg,,ritemaster
+Royal Dancer,Human,4,4,13,215,840,,,,,,,Sneak,5,Pursuit,5,Flurry,8,cr_royaldancer_1.jpg,,royaldancer
+Royal Dragon,Human,4,4,14,260,900,,,,,,,Battleblow,4,Stoneskin,,Sage Advice,6,cr_royaldragon_1.jpg,,royaldragon
+Royal Griffin,Human,3,4,11,182,585,,,,,,,(S)Thunderbolt,2,Rebirth,2,Reflect,3,cr_royalgriffin_1.jpg,,royalgriffin
+Royal Knight,Human,4,4,13,235,880,,,,,,,Block,7,Battleblow,5,Humanity,6,cr_royalknight_1.jpg,,royalknight
+Sagittarius,Faen,5,4,19,344,1066,,,,,,,Dodge,7,Picking Off,10,Arrow Split,,cr_sagittarius_1.jpg,,sagittarius
+Santa Baus,Human,5,4,18,333,1322,,,,,,,Stoneskin,,Frost Armor,10,Merry X-mas,,cr_santabaus_1.jpg,,santabaus
+Satyr Sentry,Faen,4,4,14,260,980,,,,,,,Miasma,6,Sprite Link,5,Elven Salve,6,cr_satyrsentry_1.jpg,,satyrsentry
+Scout,Human,1,2,3,86,300,,,,,,,Block,1,Consecrate,1,Delay,1,cr_scout_1.jpg,"Mz,LS,CB",scout
+Sea Wizard,Faen,5,4,19,375,1411,,,,,,,Tempest,8,Sweeping Blow,,Frost Blade,10,cr_seawizard_1.jpg,,seawizard
+Sekhmet,Neander,5,6,15,279,1611,,,,,,,Life Sap 6,,Bloodrage 8,,Unbound,,cr_sekhmet_1.jpg,,sekhmet
+Sentry Angel,Human,4,6,12,233,780,,,,,,,Consecrate,6,Restoration,7,Frost Armor,5,cr_sentryangel_1.jpg,,sentryangel
+Seraph,Human,4,4,13,281,1043,,,,,,,Anger,7,Restoration,6,Unbound,,cr_seraph_1.jpg,,seraph
+Shinryu,Human,5,4,18,356,1325,,,,,,,Rain Dance,,Maelstrom,,Dragon Ascencion,,cr_shinryu_1.jpg,,shinryu
+Snow Harlot,Mortii,5,4,19,325,1150,,,,,,,Mass Heal 9,,Tempest 8,,Ice Coffin,,cr_snowharlot_1.jpg,,snowharlot
+Spider Queen,Neander,5,6,16,360,1267,,,,,,,Venom Edge 8,,Ravage 9,,Immunity 9,,cr_spiderqueen_1.jpg,,spiderqueen
+Spirit Siren,Mortii,5,4,16,310,1204,,,,,,,Curse 6,,Seals,,Rebirth 7,,cr_spiritsiren_1.jpg,,spiritsiren
+Swordmaster,Human,4,2,13,147,855,,,,,,,Frost Armor,3,Sweeping Blow,,Maji Shield,6,cr_swordmaster_1.jpg,,swordmaster
+Sylph,Human,5,4,22,311,1231,,,,,,,Thor's Rage,10,Immunity,7,Dodge,9,cr_sylph_1.jpg,,sylph
+Tauro General,Neander,4,6,12,280,1102,,,,,,,Battleblow 5,,Anger 6,,Restoration 7,,cr_taurogeneral_1.jpg,,taurogeneral
+Tauros Elder,Neander,4,4,13,255,842,,,,,,,Battleblow 7,,Block 7,,Earth Totem 7,,cr_tauroselder_1.jpg,,tauroselder
+Taurus,Neander,5,4,20,332,1350,,,,,,,Nobility 10,,Earth Totem 10,,Omega Impact,,cr_taurus_1.jpg,,taurus
+Techno-Chief,Human,4,4,13,230,1050,,,,,,,Sage Advice,4,Bloodlust,3,Sweeping Blow,,cr_techno-chief_1.jpg,,techno-chief
+Terror Dragon,Mortii,5,4,15,364,1290,,,,,,,Stoneskin,,Reflect 8,,Warlust 9,,cr_terrordragon_1.jpg,,terrordragon
+Thalassa,Mortii,5,6,14,240,1325,,,,,,,Bane 6,,Death March 7,,Recycle 1,,cr_thalassa_1.jpg,,thalassa
+The Puppeteer,Mortii,4,4,14,198,623,,,,,,,Death March 7,,Godswill 8,,Death Gaze,,cr_thepuppeteer_1.jpg,,thepuppeteer
+The Twins,Neander,4,4,14,247,712,,,,,,,Stoneskin,,Twin Defense,,Twin Terror,,cr_thetwins_1.jpg,,thetwins
+The Unseen,Mortii,3,4,9,231,618,,,,,,,(D)Tomb Traps 4,,(S)Typhoon 3,,Rebirth 5,,cr_theunseen_1.jpg,,theunseen
+Titania,Human,5,4,15,270,1125,,,,,,,Ambush,9,Chainstrike,7,Rebirth,7,cr_titania_1.jpg,,titania
+Treant Elder,Faen,4,4,13,270,820,,,,,,,Restoratino,6,Picking Off,6,Mass Heal,6,cr_treantelder_1.jpg,,treantelder
+Treant Guide,Faen,3,4,10,160,588,,,,,,,Mass Heal,3,Elven Salve,4,Mass Heal,5,cr_treantguide_1.jpg,,treantguide
+Treant Ranger,Faen,3,4,10,125,800,,,,,,,Counter,7,Restoration,6,Retaliate,6,cr_treantranger_1.jpg,,treantranger
+Treant Weaver,Faen,3,4,10,184,617,,,,,,,Restoration,4,Cloudburst,4,Retaliate,6,cr_treantweaver_1.jpg,,treantweaver
+Troll Guard,Neander,3,4,10,155,800,,,,,,,Block 5,,Flaming 5,,Earth Totem 6,,cr_trollguard_1.jpg,,trollguard
+Troll Mage,Neander,3,4,10,220,753,,,,,,,(D)Backdraft 5,,Anger 6,,Bloodlust 6,,cr_trollmage_1.jpg,,trollmage
+Troll Scout,Neander,3,6,9,203,700,,,,,,,Ambush 6,,Ravage 6,,Bloodlust 7,,cr_trollscout_1.jpg,,trollscout
+Tidal Siren,Neander,5,4,14,216,1151,,,,,,,Tempest 5,,Discord 7,,Rebirth 7,,cr_tidalsiren_1.jpg,,tidalsiren
+Undying Will,Mortii,5,4,16,354,1280,,,,,,,Blaze 7,,Rebirth 5,,(D)Instakill,,cr_undyingwill_1.jpg,,undyingwill
+Ursa Major,Neander,4,4,13,245,915,,,,,,,Stabthrough 7,,Frost Armor 7,,Anger 6,,cr_ursamajor_1.jpg,,ursamajor
+Valkyrie,Faen,4,2,14,312,985,,,,,,,Bullseye,,Dodge,7,Wing of Aegis,,cr_valkyrie_1.jpg,,valkyrie
+Venom Tyrant,Neander,5,4,15,335,1330,,,,,,,Sacrifice 8,,Gas Cloud 8,,Restoration 9,,cr_venomtyrant_1.jpg,,venomtyrant
+Voltic Priest,Faen,3,4,9,136,620,,,,,,,Cloudburst,2,Holy Light,5,Elven Salve,5,cr_volticpriest_1.jpg,,volticpriest
+Warband Chief,Neander,4,6,13,245,838,,,,,,,Counter 7,,Ravage 7,,Feral Fever 6,,cr_warbandchief_1.jpg,,warbandchief
+Wild Efreet,Mortii,3,4,11,166,615,,,,,,,Flaming 6,,Detonate 6,,(D)Pyre Bomb 6,,cr_wildefreet_1.jpg,,wildefreet
+Wolveria,Neander,4,2,14,215,844,,,,,,,Ambush 8,,Rage Boost 5,,Feral Fever 8,,cr_wolveria_1.jpg,,wolveria
+Wood Stalker,Faen,3,2,10,186,716,,,,,,,Stabthrough,4,Assassinate,5,Miasma,6,cr_woodstalker_1.jpg,,woodstalker
+Year Beast,Neander,5,4,19,25,1067,,,,,,,Picking Off 6,,Pursuit 7,,Menace,,cr_yearbeast_1.jpg,,yearbeast
+Yeti,Neander,5,4,19,465,1498,,,,,,,Restoration 9,,Tempest 9,,Bellow,,cr_yeti_1.jpg,,yeti
+Yggdryad,Faen,5,4,17,315,1261,,,,,,,Safeguard,7,Dodge,6,Delay,2,cr_yggdryad_1.jpg,,yggdryad
+Zealot,Human,1,2,4,105,360,,,,,,,Ambush,1,Delay,1,Counter,4,cr_zealot_1.jpg,"Mz,LS,CB",zealot

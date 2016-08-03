@@ -1,5 +1,5 @@
-from Tkinter import Tk, BOTH, CENTER, LEFT, RIGHT, END, HORIZONTAL, RAISED, GROOVE, RIDGE, DISABLED, NORMAL, X, Y, NW, W, N, E, S, Canvas, Text, StringVar, Radiobutton
-from ttk import Label, Frame, Notebook, Entry, Progressbar, Combobox, Button
+from tkinter import Tk, BOTH, CENTER, LEFT, RIGHT, END, HORIZONTAL, RAISED, GROOVE, RIDGE, DISABLED, NORMAL, X, Y, NW, W, N, E, S, Canvas, Text, StringVar, Radiobutton
+from tkinter.ttk import Label, Frame, Notebook, Entry, Progressbar, Combobox, Button
 from PIL import Image, ImageTk
 import pandas as pd
 import string
@@ -47,7 +47,7 @@ class DeckHeroes(Frame):
         
         notebook = Notebook(self, width=WIDTH-30)
         notebook.pack(expand=1, anchor=NW, padx=10)
-        notebook.bind("<<NotebookTabChanged>>", self.FocusIn)
+        notebook.bind("<<NotebookTabChanged>>", self._resetTab)
         #notebook.bind("<<NotebookTabChanged>>", self.updateSearchCombolist, add='+')
         notebook.enable_traversal()
         self.notebook = notebook
@@ -56,14 +56,20 @@ class DeckHeroes(Frame):
         self.he_tab = self.createHeroTab(self.notebook)
         self.sk_tab = self.createSkillTab(self.notebook)
         self.ru_tab = self.createRuneTab(self.notebook)
+        
+        self._creatureTabEvents()
   
 
-    def FocusIn(self, event):
+    def _resetTab(self, event):
         
         self.srchCombo.focus_set()
         
-        for fctnRB in self.fltrFaction.itervalues():
-            fctnRB.deselect()
+        try:
+            self.fltrFaction[self.fctnChoice.get()].deselect()
+            self.fctnChoice.set("")
+        except KeyError:
+            pass
+
             
         self.fltrSkill.set("Skill")
         self.fltrStar.set("Stars")
@@ -83,15 +89,17 @@ class DeckHeroes(Frame):
         path = {
             "img":  "images/creatures/%s",
             "icon": "images/icons/logo_%s.png",
-            "fctn": "images/icons/Faction_%s.png",
-            "star": "images/icons/logo_Star%d.png",        
+            "star": "images/icons/logo_Star%d.png",
+            "fctn": "images/icons/Faction_%s.png"
+ 
             }
             
         tab = Frame(parent)
         parent.insert(END, tab, text='Creatures', underline=0) 
 
-        self.creature = "apprentice"  
-        creatDict = self.fetchCreature(self.creature)            
+        creature = "abaddon"  
+        creature_ = self.fetchCreature(creature)     
+        self.creature = creature_
         
         ### Create all Frames to be used inside the notebook
         imgFrame  = Frame(tab)
@@ -105,17 +113,17 @@ class DeckHeroes(Frame):
         imgFrame.grid  (row=1, column=0, sticky=N+W, rowspan=2)
         attrFrame.grid (row=1, column=2, sticky=N+W)
         sklFrame.grid  (row=2, column=2, sticky=N+W)
-        fltrFrame.grid (row=3, column=0, sticky=S+W, columnspan=3)
+        fltrFrame.grid (row=3, column=0, sticky=S+W+E, columnspan=3)
         srchFrame.grid (row=4, column=0, sticky=S+W, columnspan=3)
         
         #Name of the Creature
-        crName = Label (tab, text=creatDict["CreatureName"][0], font="Helvetica 11 bold")
+        crName = Label (tab, text=creature_.CreatureName.item(), font="Helvetica 11 bold")
         crName.grid (row=0, column=0, sticky=W, padx=10, pady=5, columnspan=2)
         attrDict["CreatureName"] = crName
                        
         ### Contents of the imgFrame
         try:
-            icrImage = self.addImage(path["img"]%(creatDict["Image"][0]))
+            icrImage = self.addImage(path["img"]%(creature_.Image.item()))
         except:
             icrImage = self.addImage(path["img"]%("placeholder.jpg"))
         finally:
@@ -127,7 +135,7 @@ class DeckHeroes(Frame):
         
         srcLabel = Label(imgFrame, text="Source(s): ", **config["static"])
         srcLabel.grid(row=1, column=0, padx=10, pady=10, sticky=W)
-        srcLabel2 = Label(imgFrame, text=creatDict["Source"][0], **config["dynamic"])
+        srcLabel2 = Label(imgFrame, text=creature_.Source.item(), **config["dynamic"])
         srcLabel2.grid(row=1, column=1, pady=10, sticky=W)
         attrDict["Source"] = srcLabel2
                       
@@ -142,12 +150,13 @@ class DeckHeroes(Frame):
                       "Delay Timer": {"row":1, "column":0},
                       "Cost":        {"row":1, "column":2},
                       "Base Atk":    {"row":2, "column":0},
-                      "Base HP":     {"row":2, "column":2}
+                      "Base HP":     {"row":2, "column":2},
+                      "Choose Level":{"row":3, "column":0}
                      }
         
-        for lbl, rc in attrLabels.iteritems():
+        for lbl, rc in attrLabels.items():
             
-            if lbl in ["Faction", "Star Rating"]:
+            if lbl in ["Faction", "Star Rating", "Choose Level"]:
                 attrLabel = Label(attrFrame, text=lbl, **config["static"])
             
             #Add icon beside the labels
@@ -160,7 +169,7 @@ class DeckHeroes(Frame):
             attrLabel.grid(padx=5, sticky=E, **rc)       
         
         ## Place dynamic label: Faction
-        fctn = creatDict["Faction"][0]
+        fctn = creature_.Faction.item()
         ifctnImage = self.addImage(path["fctn"]%(fctn),image="icon")
         fctnLabel = Label(attrFrame, width=12, text=fctn, \
                          image=ifctnImage, compound=LEFT, **config["dynamic"])
@@ -169,7 +178,7 @@ class DeckHeroes(Frame):
         attrDict["Faction"] = fctnLabel
         
         ## Place dynamic label: StarRating
-        star = int(creatDict["StarRating"][0])
+        star = int(creature_.StarRating.item())
         istarImage = self.addImage(path["star"]%(star), image="star", star=star)
         starLabel = Label(attrFrame, image=istarImage, compound=RIGHT)
         starLabel.image = istarImage
@@ -177,21 +186,29 @@ class DeckHeroes(Frame):
         attrDict["StarRating"] = starLabel
         
         ## Place other dynamic entries
-        attrOther = ["DelayTimer","Cost","BaseAtk","BaseHP"]
+        attrOther = ["DelayTimer","Cost","BaseAtk0","BaseHP0"]
         
         attrEntries = [{"attr":attrOther[0], "text":attrOther[0], "row":1, "column":1},
                        {"attr":attrOther[1], "text":attrOther[1], "row":1, "column":3},
                        {"attr":attrOther[2], "text":attrOther[2], "row":2, "column":1},
                        {"attr":attrOther[3], "text":attrOther[3], "row":2, "column":3}
                       ] 
-        
+               
         for attr in attrEntries:
             entry = Entry(attrFrame, width=12, **config["dynamic"])            
             entry.grid(sticky=W, padx=5, row=attr["row"], column=attr["column"])
-            entry.insert(0, creatDict[attr["text"]][0])      
+            entry.insert(0, creature_[attr["text"]].item())  
             entry.configure(state="readonly")
             attrDict[attr["attr"]] = entry
-              
+            
+        
+        chooseLevelCB = Combobox(attrFrame, state="readonly", justify=CENTER, width=3)
+        chooseLevelCB.grid(row=3, column=1, padx=10, pady=5, sticky=W)
+        chooseLevelCB["values"] = ["0","5","10","15"]
+        chooseLevelCB.set("0")
+        attrDict["chooseLevel"] = chooseLevelCB
+        
+        
         ### Contents of the sklFrame
         sklFrame.rowconfigure(1, pad=10)
         sklFrame.rowconfigure(2, pad=10)
@@ -204,7 +221,7 @@ class DeckHeroes(Frame):
                      "Level 10:":   {"row":3, "column":0}
                     }
         
-        for lbl, rc in sklLabels.iteritems():
+        for lbl, rc in sklLabels.items():
             sklLabel = Label(sklFrame, text=lbl, **config["static"])
             sklLabel.grid(padx=5, **rc)       
             if lbl not in ["Skill","Skill Point"]:
@@ -213,9 +230,9 @@ class DeckHeroes(Frame):
         sklOther = ["Level0Skill","Level0SkillPoint","Level5Skill",\
                     "Level5SkillPoint","Level10Skill","Level10SkillPoint"]  
         
-        sklEntries = [{"text":creatDict[sklOther[0]][0], "row":1, "column":1},
-                      {"text":creatDict[sklOther[2]][0], "row":2, "column":1},
-                      {"text":creatDict[sklOther[4]][0], "row":3, "column":1},
+        sklEntries = [{"text":creature_[sklOther[0]].item(), "row":1, "column":1},
+                      {"text":creature_[sklOther[2]].item(), "row":2, "column":1},
+                      {"text":creature_[sklOther[4]].item(), "row":3, "column":1},
                      ] 
         
         for lbl,ent in zip(sklOther[0::2], sklEntries):
@@ -225,15 +242,21 @@ class DeckHeroes(Frame):
             sklentry.configure(state="readonly")
             attrDict[lbl] = sklentry
         
-        sklProgress = [{"text":creatDict[sklOther[1]][0], "row":1, "column":2},
-                       {"text":creatDict[sklOther[3]][0], "row":2, "column":2},
-                       {"text":creatDict[sklOther[5]][0], "row":3, "column":2}
+        sklProgress = [{"text":creature_[sklOther[1]].item(), "row":1, "column":2},
+                       {"text":creature_[sklOther[3]].item(), "row":2, "column":2},
+                       {"text":creature_[sklOther[5]].item(), "row":3, "column":2}
                       ]  
         
         for i,j in zip(sklOther[1::2], sklProgress):
             sklprogress = Progressbar(sklFrame, mode="determinate", orient=HORIZONTAL, maximum=10)
             sklprogress.grid(sticky=W, padx=5, row=j["row"], column=j["column"])
-            sklprogress.configure(value=int(j["text"]))
+            
+            if j["text"] == '':
+                value = 10
+            else:
+                value = int(j["text"])
+            
+            sklprogress.configure(value=value)
             attrDict[i] = sklprogress
 
 
@@ -243,14 +266,13 @@ class DeckHeroes(Frame):
         srchCombo = Combobox(srchFrame)
         srchCombo.grid(row=0, column=1, pady=10, sticky=W)
         srchCombo['values'] = self.allCreatures
-        srchCombo.bind("<Return>", self.updateCreature)
-        srchCombo.bind("<<ComboboxSelected>>", self.updateCreature)
+
         
         iSearch = self.addImage("images/icons/search.png", image="icon")
         srchButton = Button(srchFrame, image=iSearch)
         srchButton.image = iSearch
         srchButton.grid(row=0, column=2, pady=10, sticky=W)
-        srchButton.bind("<Button-1>", self.updateCreature)
+
         
         #Contents of the fltrFrame
         fltrLabel = Label(fltrFrame, text="Filter(s):")
@@ -276,12 +298,12 @@ class DeckHeroes(Frame):
                                             command=self.updateSearchCombolist)
             fltrFaction[fctn].image = ifctnImage
             fltrFaction[fctn].grid(row=0, column=col+1, padx=5)
-
+            
                        
         fltrStar = Combobox(fltrFrame, state="readonly", justify=CENTER, width=5)
         fltrStar.grid(row=0, column=2, padx=10, pady=10, sticky=W)
         fltrStar["values"] = ["","1","2","3","4","5"]
-        fltrStar.bind("<<ComboboxSelected>>", self.updateSearchCombolist)
+
         fltrStar.set("Stars")
                         
         fltrSkill = Combobox(fltrFrame, state="readonly", justify=CENTER)
@@ -290,21 +312,55 @@ class DeckHeroes(Frame):
         fltrSkill["values"] = [""] + self.getSkillList() 
         
         fltrSkill.set("Skill")
-        fltrSkill.bind("<<ComboboxSelected>>", self.updateSearchCombolist)
+
         
         resetButton = Button(fltrFrame, text="Reset")
         resetButton.grid(row=0, column=4, padx=10, pady=10, sticky=E)
-        resetButton.bind("<Button-1>", self.FocusIn)
+
                     
         self.attrDict = attrDict
         self.srchCombo = srchCombo
         self.fltrFaction = fltrFaction
         self.fltrStar = fltrStar
         self.fltrSkill = fltrSkill
+        self.resetButton = resetButton
+        self.srchButton = srchButton
         
         return tab
     
+    
+    def _creatureTabEvents(self):
+        
+        #changeLevel Event
+        levelCB = self.attrDict["chooseLevel"]
+        
+        def _setAtkHP(event):
+            basehp = self.creature["BaseHP%s"%(levelCB.get())].item()
+            self.attrDict["BaseHP0"].configure(state=NORMAL)
+            self.attrDict["BaseHP0"].delete(0, END)
+            self.attrDict["BaseHP0"].insert(END, basehp)
+            self.attrDict["BaseHP0"].configure(state="readonly") 
             
+            baseatk = self.creature["BaseAtk%s"%(levelCB.get())].item()
+            self.attrDict["BaseAtk0"].configure(state=NORMAL)
+            self.attrDict["BaseAtk0"].delete(0, END)
+            self.attrDict["BaseAtk0"].insert(END, baseatk)
+            self.attrDict["BaseAtk0"].configure(state="readonly")           
+               
+        levelCB.bind("<<ComboboxSelected>>", _setAtkHP)
+        
+        #search Events        
+        self.srchCombo.bind("<Return>", self.updateCreature)
+        self.srchCombo.bind("<<ComboboxSelected>>", self.updateCreature)
+        self.srchButton.bind("<Button-1>", self.updateCreature)    
+        
+        #filter Events
+        self.fltrStar.bind("<<ComboboxSelected>>", self.updateSearchCombolist)        
+        self.fltrSkill.bind("<<ComboboxSelected>>", self.updateSearchCombolist)    
+        self.resetButton.bind("<Button-1>", self._resetTab)
+    
+    
+    
     def updateSearchCombolist(self, *event):
         
         fltrTable = self.allCreatures
@@ -334,20 +390,20 @@ class DeckHeroes(Frame):
 
         temp = self.fetchCreature(self.srchCombo.get())
 
-        if temp["Code"][0] != "null":
+        if temp["Code"].item() != "null":
         
-            creatDict = temp.copy()   
-            self.creature = creatDict["CreatureName"][0]
+            creature_ = temp.copy()   
+            self.creature = creature_
             
             #Update attrDict               
-            for attr,child in self.attrDict.iteritems():
+            for attr,child in self.attrDict.items():
        
                 if attr in ["CreatureName", "Source"]:
-                    child.configure(text=creatDict[attr][0])
+                    child.configure(text=creature_[attr].item())
 
                 elif attr=="Image":
                     try:
-                        icrImage = self.addImage(path["img"]%(creatDict["Image"][0]))
+                        icrImage = self.addImage(path["img"]%(creature_.Image.item()))
                     except:
                         icrImage = self.addImage(path["img"]%("placeholder.jpg"))
                     finally:
@@ -355,30 +411,33 @@ class DeckHeroes(Frame):
                         child.image = icrImage 
                 
                 elif attr=="Faction":
-                    ifctnImage = self.addImage(path["fctn"]%(creatDict["Faction"][0])\
+                    ifctnImage = self.addImage(path["fctn"]%(creature_.Faction.item())\
                                                ,image="icon")
-                    child.configure(text=creatDict[attr][0],\
+                    child.configure(text=creature_[attr].item(),\
                                      image=ifctnImage, compound=LEFT)
                     child.image = ifctnImage
                                             
                 elif attr == "StarRating":    
-                    star = int(creatDict["StarRating"][0])
+                    star = int(creature_.StarRating.item())
                     istarImage = self.addImage(path["star"]%(star),\
                                            image="star", star=star)
                     child.configure(image=istarImage)
                     child.image = istarImage           
-                        
+                
+                elif attr == "chooseLevel":
+                    child.set("0")
+                
                 elif isinstance(child, Entry):
                     child.configure(state=NORMAL)
                     child.delete(0, END)
-                    child.insert(END, creatDict[attr][0])
+                    child.insert(END, creature_[attr].item())
                     child.configure(state="readonly")  
                     
                 elif isinstance(child, Progressbar):
-                    if creatDict[attr][0]=='':
+                    if creature_[attr].item()=='':
                         value = 10
                     else:
-                        value = int(creatDict[attr][0])
+                        value = int(creature_[attr].item())
                         
                     child.configure(value=value)
     
@@ -521,14 +580,15 @@ class DeckHeroes(Frame):
     def fetchCreature(self, cr_code):
         
         creature = pd.read_csv('creatures.csv', dtype=str, keep_default_na=False)   
-        cr_code = string.lower("".join(cr_code.split()))
+        cr_code = "".join(cr_code.split())
+        cr_code = cr_code.lower()
         
         if cr_code in creature.Code.values:
             query = creature[creature.Code==cr_code].reset_index(drop=True)
         else:
             query = creature[creature.Code=="null"].reset_index(drop=True)
             
-        return query.to_dict()
+        return query
     
 
     def fetchHero(self, he_name):
