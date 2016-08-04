@@ -69,8 +69,7 @@ class DeckHeroes(Frame):
             self.fctnChoice.set("")
         except KeyError:
             pass
-
-            
+        
         self.fltrSkill.set("Skill")
         self.fltrStar.set("Stars")
         
@@ -90,7 +89,8 @@ class DeckHeroes(Frame):
             "img":  "images/creatures/%s",
             "icon": "images/icons/logo_%s.png",
             "star": "images/icons/logo_Star%d.png",
-            "fctn": "images/icons/Faction_%s.png"
+            "fctn": "images/icons/Faction_%s.png",
+            "fctn2": "images/icons/Faction_%s_2.png"
  
             }
             
@@ -116,10 +116,14 @@ class DeckHeroes(Frame):
         fltrFrame.grid (row=3, column=0, sticky=S+W+E, columnspan=3)
         srchFrame.grid (row=4, column=0, sticky=S+W, columnspan=3)
         
-        #Name of the Creature
+        #Name and description of the Creature
         crName = Label (tab, text=creature_.CreatureName.item(), font="Helvetica 11 bold")
-        crName.grid (row=0, column=0, sticky=W, padx=10, pady=5, columnspan=2)
+        crName.grid (row=0, column=0, padx=10, pady=5)
         attrDict["CreatureName"] = crName
+        
+        crDesc = Label(tab, text=creature_.Script.item(), font="Helvetica 10 italic")
+        crDesc.grid(row=0, column=1, sticky=W, pady=5, columnspan=3)
+        attrDict["Script"] = crDesc
                        
         ### Contents of the imgFrame
         try:
@@ -170,7 +174,7 @@ class DeckHeroes(Frame):
         
         ## Place dynamic label: Faction
         fctn = creature_.Faction.item()
-        ifctnImage = self.addImage(path["fctn"]%(fctn),image="icon")
+        ifctnImage = self.addImage(path["fctn2"]%(fctn),image="icon")
         fctnLabel = Label(attrFrame, width=12, text=fctn, \
                          image=ifctnImage, compound=LEFT, **config["dynamic"])
         fctnLabel.image = ifctnImage
@@ -202,12 +206,19 @@ class DeckHeroes(Frame):
             attrDict[attr["attr"]] = entry
             
         
-        chooseLevelCB = Combobox(attrFrame, state="readonly", justify=CENTER, width=3)
-        chooseLevelCB.grid(row=3, column=1, padx=10, pady=5, sticky=W)
-        chooseLevelCB["values"] = ["0","5","10","15"]
-        chooseLevelCB.set("0")
-        attrDict["chooseLevel"] = chooseLevelCB
+        clFrame = Frame(attrFrame)
+        clFrame.grid(row=3, column=1)
         
+        chooseLevelRB = {}
+        self.chooseLevel = StringVar()
+        
+        for col,lvl in enumerate(["0","5","10","15"]):
+            chooseLevelRB[lvl] = Radiobutton(clFrame, indicatoron=0, variable=self.chooseLevel, value=lvl, text=lvl, width=2)
+            chooseLevelRB[lvl].grid(row=3, column=col+2)
+        
+        chooseLevelRB["0"].select()
+        
+        attrDict["chooseLevel"] = chooseLevelRB
         
         ### Contents of the sklFrame
         sklFrame.rowconfigure(1, pad=10)
@@ -289,7 +300,7 @@ class DeckHeroes(Frame):
         self.fctnChoice = StringVar()
                         
         for col,fctn in enumerate(factions):
-            ifctnImage = self.addImage(path["fctn"]%(fctn),image="icon")
+            ifctnImage = self.addImage(path["fctn2"]%(fctn),image="icon")
             fltrFaction[fctn] = Radiobutton(fltrFactionFrame,\
                                             image=ifctnImage,\
                                             indicatoron=0,\
@@ -330,24 +341,44 @@ class DeckHeroes(Frame):
     
     
     def _creatureTabEvents(self):
-        
+         
         #changeLevel Event
-        levelCB = self.attrDict["chooseLevel"]
         
-        def _setAtkHP(event):
-            basehp = self.creature["BaseHP%s"%(levelCB.get())].item()
+        levelRB = self.attrDict["chooseLevel"]      
+        
+        def _levelRBevent(event):
+            if event.type == "7":
+                source = event.widget.cget("text")
+            else:
+                source = self.chooseLevel.get()
+                
+            basehp = self.creature["BaseHP%s"%(source)].item()
             self.attrDict["BaseHP0"].configure(state=NORMAL)
             self.attrDict["BaseHP0"].delete(0, END)
             self.attrDict["BaseHP0"].insert(END, basehp)
             self.attrDict["BaseHP0"].configure(state="readonly") 
             
-            baseatk = self.creature["BaseAtk%s"%(levelCB.get())].item()
+            baseatk = self.creature["BaseAtk%s"%(source)].item()
             self.attrDict["BaseAtk0"].configure(state=NORMAL)
             self.attrDict["BaseAtk0"].delete(0, END)
             self.attrDict["BaseAtk0"].insert(END, baseatk)
-            self.attrDict["BaseAtk0"].configure(state="readonly")           
-               
-        levelCB.bind("<<ComboboxSelected>>", _setAtkHP)
+            self.attrDict["BaseAtk0"].configure(state="readonly")  
+            
+            cost = self.creature["Cost"].item()
+            
+            if source == "15":
+                cost = self.creature["CostAtMeld"].item()
+            if cost == "":
+                cost = self.creature["Cost"].item()
+                    
+            self.attrDict["Cost"].configure(state=NORMAL)
+            self.attrDict["Cost"].delete(0, END)
+            self.attrDict["Cost"].insert(END, cost)
+            self.attrDict["Cost"].configure(state="readonly")                                      
+        
+        for rb in levelRB.values():
+            rb.bind("<Enter>", _levelRBevent)
+            rb.bind("<Leave>", _levelRBevent)
         
         #search Events        
         self.srchCombo.bind("<Return>", self.updateCreature)
@@ -384,13 +415,14 @@ class DeckHeroes(Frame):
         path = {
             "img":  "images/creatures/%s",
             "icon": "images/icons/logo_%s.png",
+            "star": "images/icons/logo_Star%d.png",
             "fctn": "images/icons/Faction_%s.png",
-            "star": "images/icons/logo_Star%d.png",        
+            "fctn2": "images/icons/Faction_%s_2.png"
             }
 
         temp = self.fetchCreature(self.srchCombo.get())
 
-        if temp["Code"].item() != "null":
+        if temp.Code.item() != "null":
         
             creature_ = temp.copy()   
             self.creature = creature_
@@ -398,20 +430,23 @@ class DeckHeroes(Frame):
             #Update attrDict               
             for attr,child in self.attrDict.items():
        
-                if attr in ["CreatureName", "Source"]:
+                if attr in ["CreatureName", "Source", "Script"]:
                     child.configure(text=creature_[attr].item())
 
                 elif attr=="Image":
                     try:
-                        icrImage = self.addImage(path["img"]%(creature_.Image.item()))
+                        icrImage = self.addImage(path["img"]%(creature_.Image_2.item()))
                     except:
-                        icrImage = self.addImage(path["img"]%("placeholder.jpg"))
+                        try:
+                            icrImage = self.addImage(path["img"]%(creature_.Image.item()))
+                        except:
+                            icrImage = self.addImage(path["img"]%("placeholder.jpg"))
                     finally:
                         child.configure(image=icrImage)
                         child.image = icrImage 
                 
                 elif attr=="Faction":
-                    ifctnImage = self.addImage(path["fctn"]%(creature_.Faction.item())\
+                    ifctnImage = self.addImage(path["fctn2"]%(creature_.Faction.item())\
                                                ,image="icon")
                     child.configure(text=creature_[attr].item(),\
                                      image=ifctnImage, compound=LEFT)
@@ -424,8 +459,38 @@ class DeckHeroes(Frame):
                     child.configure(image=istarImage)
                     child.image = istarImage           
                 
+                elif attr == "BaseHP0":
+                    basehp = self.creature["BaseHP%s"%(self.chooseLevel.get())].item()   
+                    
+                    child.configure(state=NORMAL)
+                    child.delete(0, END)
+                    child.insert(END, basehp)
+                    child.configure(state="readonly")                      
+
+
+                elif attr == "BaseAtk0":
+                    baseatk = self.creature["BaseAtk%s"%(self.chooseLevel.get())].item()   
+                    
+                    child.configure(state=NORMAL)
+                    child.delete(0, END)
+                    child.insert(END, baseatk)
+                    child.configure(state="readonly")                    
+            
+                elif attr == "Cost":
+                    cost = self.creature["Cost"].item()
+            
+                    if self.chooseLevel.get() == "15":
+                        cost = self.creature["CostAtMeld"].item()
+                    if cost == "":
+                        cost = self.creature["Cost"].item()
+
+                    self.attrDict["Cost"].configure(state=NORMAL)
+                    self.attrDict["Cost"].delete(0, END)
+                    self.attrDict["Cost"].insert(END, cost)
+                    self.attrDict["Cost"].configure(state="readonly")        
+                
                 elif attr == "chooseLevel":
-                    child.set("0")
+                    pass             
                 
                 elif isinstance(child, Entry):
                     child.configure(state=NORMAL)
@@ -580,6 +645,9 @@ class DeckHeroes(Frame):
     def fetchCreature(self, cr_code):
         
         creature = pd.read_csv('creatures.csv', dtype=str, keep_default_na=False)   
+        creature_desc = pd.read_csv('creature_desc.csv', keep_default_na=False)
+        creature = pd.merge(creature, creature_desc, how='left')
+        creature.fillna("", inplace=True)
         cr_code = "".join(cr_code.split())
         cr_code = cr_code.lower()
         
@@ -589,7 +657,7 @@ class DeckHeroes(Frame):
             query = creature[creature.Code=="null"].reset_index(drop=True)
             
         return query
-    
+   
 
     def fetchHero(self, he_name):
         
