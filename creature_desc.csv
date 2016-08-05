@@ -1,7 +1,302 @@
 CreatureName,Script
-"Apprentice","One day I will surpass you all!"
-"Aquarius","Welcome to my Winter Wonderland!"
-"Marksman","You cannot escape my arrows."
-"Pikeman","With this lance and shield, I will uphold the light."
-"Scout","Onwards!"
-"Zealot","Pain. Such sweet, delicious pain!"
+Apprentice,One day I will surpass you all!
+Aquarius,Welcome to my Winter Wonderland!
+Marksman,You cannot escape my arrows.
+Pikeman,"With this lance and shield, I will uphold the light."
+Scout,Onwards!
+Zealot,"Pain. Such sweet, delicious pain!"
+Bloom Warden,"Fear not darling, the power of love will help you come through. "
+Faen Brave,Hush… Do you hear it? 
+Faen Hound,Arooooooooooo 
+Faen Warden,Halt! Strangers are not welcome here! 
+Wind Warden,Come feel my gentle caress... 
+Banshee,
+Bony Fiend,
+Hellhound,
+Imp,
+Nosferatu,
+Flying Fox,
+Nean Thrall,
+Neander Hippo,
+Neander Tauro,
+Shaman Adept,
+Centaur Grunt,
+Centaur Tracker,
+Faen Archer,
+Faen Guard,
+Faen Hunter,
+Faen Rogue,
+Faen Warrior,
+Flame Warden,
+Frost Warden,
+Wood Patrol,
+Berserker,
+Elite Duelist,
+Empire Archer,
+Missionary,
+Overseer,
+Praetor,
+Protector,
+Sentinel,
+Templar,
+Vicar,
+Blooddrinker,
+Burnt Fiend,
+Demona,
+Flesheater,
+Haunted Idol,
+Llorona,
+Nightmare,
+Plaguebringer,
+Shadowstalker,
+Zombie King,
+Black Widow,
+Bloodseeker,
+Elder Shaman,
+Nean Warhog,
+Sandstalker,
+Tauros Seeker,
+Venom Queen,
+Wifwulf,
+Witch Doctor,
+Wolf Rider,
+Ash Highguard,
+Centaur Guide,
+Dream Healer,
+Druid,
+Elementalist,
+Faen Guardian,
+Faen Marksman,
+Faen Ranger,
+Frost Ranger,
+Magic Weaver,
+Pegasus,
+Treant Guide,
+Treant Ranger,
+Treant Weaver,
+Voltic Priest,
+Wood Stalker,
+Archmage,
+Border Ranger,
+Creatureinal,
+Devotee,
+Divine Knight,
+Empire Guard,
+Flame Mage,
+Flame Witch,
+Phantom Rogue,
+Pious Warden,
+Royal Griffin,
+Blightghast,
+Bloody Baron,
+Bone Mage,
+Dark Assassin,
+Dark Gargoyle,
+Dark Witch,
+Evil Eye,
+Frost Caller,
+Imp Lord,
+Manticore,
+Necrotic Naga,
+Night Terror,
+Pit Minion,
+The Unseen,
+Wild Efreet,
+Alert Guard,
+Blood Shaman,
+Blood Soldier,
+Blood Warlock,
+Desert Sting,
+Feline Lurker,
+Fire Lizard,
+Harpy Queen,
+Hippo Raider,
+Lazy Guard,
+Panther Guard,
+Rite Master,
+Troll Guard,
+Troll Mage,
+Troll Scout,
+Arrow Brave,
+Centaur Chief,
+Dream Guide,
+Faen Mesmer,
+Faen Rampager,
+Flame Brave,
+Henrietta,
+Horned Beast,
+Horus,
+Laurel,
+Light Brave,
+Master Guide,
+Moon Walker,
+Naga Mistress,
+Pale Dragon,
+Pegasus Lord,
+Satyr Sentry,
+Treant Elder,
+Valkyrie,
+Arcane Hunter,
+Arcane Master,
+Border Guard,
+Chimera,
+Cleric ,
+Colossus,
+Dame Coldfire,
+Grand Mage,
+Griffi-Knight,
+Icy Mage,
+Juggernaut,
+Mariner,
+Michael,
+Oracle,
+Paladin,
+Prima Donna,
+Royal Dancer,
+Royal Dragon,
+Royal Knight,
+Sentry Angel,
+Seraph,
+Swordmaster,
+Techno-Chief,
+Bloody Lord,
+Cave Dragon,
+Delilah,
+Demonic Templar,
+Dullahan,
+Eye of Jonara,
+Ghostly Judge,
+Harbinger,
+Hell Knight,
+Hellwolf,
+Lycanthrope,
+Pit Lord,
+Pit Priest,
+Plague Dragon,
+Queen Temptress,
+The Puppeteer,
+Cyclops,
+Fenrir,
+Flame Master,
+Graboid,
+Griffin Rider,
+Howling King,
+Icy Huntress,
+Kirin,
+Mammoth Rider,
+Neamazon,
+Nean Raptor,
+Neander Giant,
+Ophiuchus,
+Panther Chief,
+Tauro General,
+Tauros Elder,
+The Twins,
+Ursa Major,
+Warband Chief,
+Wolveria,
+Alice,
+Arcane Knight,
+Aries,
+Ash Beast,
+Axe Warden,
+Blood Elf,
+Blossoms,
+Chrono,
+Demeter,
+Dragonlord,
+Fae Firstborn,
+Fairy Fencer,
+Gaia,
+Hanuman,
+Hippolyta,
+Libra,
+Lucky Sage,
+Mimir's Tree,
+Moon Guardian,
+Ordnance,
+Phoenix,
+Sagittarius,
+Santa Claudia,
+Sea Wizard,
+Yggdryad,
+Angel Prime,
+Arcane Sage,
+Archdeva,
+Ares,
+Azure Dragon,
+Balthazar,
+Bewitcher,
+Cancer,
+Columbus,
+Demon Hunter,
+Fafnir,
+Great Mystic,
+Hera,
+Imperator,
+Kirtana,
+Lady Bloom,
+Lady Liberty,
+Leo,
+Mythril Drone,
+Paragon,
+Pontiff,
+Pyramus,
+Royal Beastmaster,
+Santa Baus,
+Shinryu,
+Sylph,
+Thisbe,
+Titania,
+Vindicator,
+Anubis,I won’t stop until I reduce you to ashes!
+Belphegor,Burn for eternity in the abyss!
+Bloodletter,Don’t blink. You may find your heart between my fingers.
+Chiroptera,Come feel Death’s cold embrace
+Dahlia,May your ancestors protect you in the long nights ahead.
+Death Knight,All hope will be buried along with your bones!
+Death's Angel,Any last words?
+Dusk Huntress,Hunting is my favorite pastime…
+Gemini,Both of us are doing well. There’s two of us here!
+Gorgon,"Grow, get stronger, and kill everyone who made you cry."
+Jormungand,Grrrr… arrrrr…
+Killer Queen,I will punish you for your sins.
+Lich Lord,My army grows with every fallen foe!
+Lilith,I’ll swallow your soul!
+Lord Bones,I’ll cleanse this world of filth!
+Magmus,Any who stand in my way will feel the full force of my wrath.
+Octavius,An ancient ship lost at sea
+Phantom Liege,The Sword will maintain the Balance.
+Pisces,You’ll be dead before you spot me!
+Pit Dragon,Pain will help you ignore your fear.
+Revenant,Fear the sky! Fear the sound of wings beating on air!
+Snow Harlot,This graveyard is my home. This coffin is my bed.
+Spirit Siren,I will kill you without hesitation.
+Terror Dragon,Feel the hopelessness and fear.
+Thalassa,Nothing is more stimulating than slowly rending someone’s soul.
+Undying Will,I will not hesitate to unleash the beast within!
+Virgo,"Be careful, Virgil is angry!"
+Abaddon,"Without freedom, there will always be war!"
+Anathema,I will shred your corpse and suck your veins dry.
+Basilisk,You pitiful creatures are nothing more than food!
+Capricorn,Heh! There won’t be anything left when I’m done with you!
+Cosmic Hare,I’ll clobber you with my carrots!
+Easter Bunny,A new beginning!
+Granite Dragon,"My Lord, I shall guard you with my life…"
+Kitsune,"Let’s have a little chat shall we, my dear?"
+Kumiho,Hey… don’t stare at me so much… please?
+Lava Wyrm,Screech!
+Nidhogg,Darkness is upon us The Black Eye shall see all!
+Night's Slayer,The darkness is my veil.
+Oinari,Time for Ivory and me to come out and play!
+Quetzalcoatl,Only fools do not tremble in the face of true fear.
+Ridge Hunter,"To me, dragons are merely pets."
+Scorpio,I always get my prey.
+Sekhmet,All glory is mine!
+Soul Shrew,Are you afraid of bats?
+Spider Queen,Purify your flesh and await death with a clear mind.
+Taurus,Don’t be shy. Look into my eyes.
+Tidal Siren,Care to join me in the dance?
+Venom Tyrant,Don’t say anything about the poison. I mean it.
+Year Beast,I haven’t tasted fresh meat in decades. How I miss those days…
+Yeti,Feel the frigid winds of the Ice Ages!

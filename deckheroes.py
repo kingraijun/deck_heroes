@@ -1,8 +1,9 @@
-from tkinter import Tk, BOTH, CENTER, LEFT, RIGHT, END, HORIZONTAL, RAISED, GROOVE, RIDGE, DISABLED, NORMAL, X, Y, NW, W, N, E, S, Canvas, Text, StringVar, Radiobutton
+from tkinter import Tk, BOTH, CENTER, LEFT, RIGHT, END, HORIZONTAL, RAISED, GROOVE, RIDGE, DISABLED, SOLID, NORMAL, X, Y, NW, W, N, E, S, Canvas, Text, StringVar, Radiobutton, Toplevel, WORD
 from tkinter.ttk import Label, Frame, Notebook, Entry, Progressbar, Combobox, Button
 from PIL import Image, ImageTk
 import pandas as pd
 import string
+import math
 
 
 #Global Variables
@@ -48,7 +49,6 @@ class DeckHeroes(Frame):
         notebook = Notebook(self, width=WIDTH-30)
         notebook.pack(expand=1, anchor=NW, padx=10)
         notebook.bind("<<NotebookTabChanged>>", self._resetTab)
-        #notebook.bind("<<NotebookTabChanged>>", self.updateSearchCombolist, add='+')
         notebook.enable_traversal()
         self.notebook = notebook
                
@@ -58,23 +58,6 @@ class DeckHeroes(Frame):
         self.ru_tab = self.createRuneTab(self.notebook)
         
         self._creatureTabEvents()
-  
-
-    def _resetTab(self, event):
-        
-        self.srchCombo.focus_set()
-        
-        try:
-            self.fltrFaction[self.fctnChoice.get()].deselect()
-            self.fctnChoice.set("")
-        except KeyError:
-            pass
-        
-        self.fltrSkill.set("Skill")
-        self.fltrStar.set("Stars")
-        
-        self.srchCombo['values'] = self.allCreatures
-    
     
     def createCreatureTab(self, parent):
 
@@ -97,22 +80,22 @@ class DeckHeroes(Frame):
         tab = Frame(parent)
         parent.insert(END, tab, text='Creatures', underline=0) 
 
-        creature = "abaddon"  
+        creature = "aquarius"  
         creature_ = self.fetchCreature(creature)     
         self.creature = creature_
         
         ### Create all Frames to be used inside the notebook
         imgFrame  = Frame(tab)
-        attrFrame = Frame(tab, relief=GROOVE, padding=10)
-        sklFrame  = Frame(tab, relief=GROOVE, padding=15)
+        attrFrame = Frame(tab, relief=GROOVE, padding=5)
+        sklFrame  = Frame(tab, relief=GROOVE, padding=5)
         srchFrame = Frame(tab)
         fltrFrame = Frame(tab)
         
         #Position the Frames in the notebook grid
         # (0,0) reserved for the crName below
         imgFrame.grid  (row=1, column=0, sticky=N+W, rowspan=2)
-        attrFrame.grid (row=1, column=2, sticky=N+W)
-        sklFrame.grid  (row=2, column=2, sticky=N+W)
+        attrFrame.grid (row=1, column=2, sticky=N+W, ipadx=10, ipady=5)
+        sklFrame.grid  (row=2, column=2, sticky=N+W, ipadx=10, ipady=5)
         fltrFrame.grid (row=3, column=0, sticky=S+W+E, columnspan=3)
         srchFrame.grid (row=4, column=0, sticky=S+W, columnspan=3)
         
@@ -247,7 +230,7 @@ class DeckHeroes(Frame):
                      ] 
         
         for lbl,ent in zip(sklOther[0::2], sklEntries):
-            sklentry = Entry(sklFrame, **config["dynamic"])            
+            sklentry = Entry(sklFrame, style='TEntry', **config["dynamic"])            
             sklentry.grid(sticky=W, padx=5, row=ent["row"], column=ent["column"])
             sklentry.insert(0, ent["text"])  
             sklentry.configure(state="readonly")
@@ -270,7 +253,6 @@ class DeckHeroes(Frame):
             sklprogress.configure(value=value)
             attrDict[i] = sklprogress
 
-
         #Contents of the srchFrame
         srchLabel = Label(srchFrame, text="Search:")
         srchLabel.grid(padx=5, pady=5, sticky=E)
@@ -283,14 +265,14 @@ class DeckHeroes(Frame):
         srchButton = Button(srchFrame, image=iSearch)
         srchButton.image = iSearch
         srchButton.grid(row=0, column=2, pady=10, sticky=W)
-
+                  
         
         #Contents of the fltrFrame
         fltrLabel = Label(fltrFrame, text="Filter(s):")
         fltrLabel.grid(padx=5, pady=5, sticky=E)
         
         fltrFactionFrame = Frame(fltrFrame, relief=GROOVE)
-        fltrFactionFrame.grid(row=0, column=1, pady=5)
+        fltrFactionFrame.grid(row=0, column=1, pady=5, ipadx=3)
         
         fltrFactionLabel = Label(fltrFactionFrame, text="Faction:")
         fltrFactionLabel.grid(padx=5, pady=10, sticky=E)
@@ -308,40 +290,88 @@ class DeckHeroes(Frame):
                                             value=fctn,\
                                             command=self.updateSearchCombolist)
             fltrFaction[fctn].image = ifctnImage
-            fltrFaction[fctn].grid(row=0, column=col+1, padx=5)
-            
-                       
-        fltrStar = Combobox(fltrFrame, state="readonly", justify=CENTER, width=5)
-        fltrStar.grid(row=0, column=2, padx=10, pady=10, sticky=W)
-        fltrStar["values"] = ["","1","2","3","4","5"]
-
-        fltrStar.set("Stars")
-                        
-        fltrSkill = Combobox(fltrFrame, state="readonly", justify=CENTER)
-        fltrSkill.grid(row=0, column=3, padx=5, pady=10, sticky=W)
+            fltrFaction[fctn].grid(row=0, column=col+1)
+           
+        fltrStarFrame = Frame(fltrFrame, relief=GROOVE)
+        fltrStarFrame.grid(row=0, column=2, ipadx=5, padx=2, pady=5)
+        
+        fltrStarLabel = Label(fltrStarFrame, text="Stars:")
+        fltrStarLabel.grid(padx=5, pady=10, sticky=E)
+        
+        self.chooseStar = 0
+        starLabel = {}
+        iStar = self.addImage("images/icons/logo_blankStar.png", image="icon")
+        for star in range(5):
+            starLabel[star] = Label(fltrStarFrame, image=iStar)
+            starLabel[star].image = iStar
+            starLabel[star].name = str(star+1)
+            starLabel[star].grid(row=0, column=star+1, sticky=E)        
+      
+        fltrSkillFrame = Frame(fltrFrame, relief=GROOVE)
+        fltrSkillFrame.grid(row=0, column=3, pady=5)
+        
+        fltrSkillLabel = Label(fltrSkillFrame, text="Skill:")
+        fltrSkillLabel.grid(padx=5, pady=10, sticky=E)        
+      
+        fltrSkill = Combobox(fltrSkillFrame, state="readonly", justify=CENTER)
+        fltrSkill.grid(row=0, column=1, padx=5, pady=10, sticky=W)
         
         fltrSkill["values"] = [""] + self.getSkillList() 
         
-        fltrSkill.set("Skill")
-
-        
-        resetButton = Button(fltrFrame, text="Reset")
-        resetButton.grid(row=0, column=4, padx=10, pady=10, sticky=E)
-
+        resetButton = Button(srchFrame, text="Reset")
+        resetButton.grid(row=0, column=3, padx=10, pady=10, sticky=E)
+        resetButton.bind("<Button-1>", self._resetTab)
                     
         self.attrDict = attrDict
         self.srchCombo = srchCombo
         self.fltrFaction = fltrFaction
-        self.fltrStar = fltrStar
         self.fltrSkill = fltrSkill
-        self.resetButton = resetButton
         self.srchButton = srchButton
+        self.starLabel = starLabel
         
         return tab
     
     
+    def _resetTab(self, event):
+        
+        self.srchCombo.focus_set()
+        
+        try:
+            self.fltrFaction[self.fctnChoice.get()].deselect()
+            self.fctnChoice.set("")
+        except KeyError:
+            pass
+        
+        self.fltrSkill.set("")
+        stars = self.chooseStar = 0
+        
+        iStarOn = self.addImage("images/icons/logo_Star1.png", image="icon")
+        iStarOff = self.addImage("images/icons/logo_blankStar.png", image="icon")
+        
+        for star in range(stars):
+            self.starLabel[star].config(image=iStarOn)
+            self.starLabel[star].image = iStarOn
+
+        for star in range(stars,5):
+            self.starLabel[star].config(image=iStarOff)
+            self.starLabel[star].image = iStarOff   
+                
+        self.srchCombo['values'] = self.allCreatures    
+    
+    
+    
     def _creatureTabEvents(self):
          
+        #skill toolTip event
+        lvl0 = self.attrDict["Level0Skill"]
+        lvl5 = self.attrDict["Level5Skill"]
+        lvl10 = self.attrDict["Level10Skill"]
+        
+        lvl0Tooltip = self.ToolTip(lvl0)         
+        lvl5Tooltip = self.ToolTip(lvl5)   
+        lvl10Tooltip = self.ToolTip(lvl10)   
+
+
         #changeLevel Event
         
         levelRB = self.attrDict["chooseLevel"]      
@@ -364,12 +394,12 @@ class DeckHeroes(Frame):
             self.attrDict["BaseAtk0"].insert(END, baseatk)
             self.attrDict["BaseAtk0"].configure(state="readonly")  
             
-            cost = self.creature["Cost"].item()
+            cost = self.creature.Cost.item()
             
             if source == "15":
-                cost = self.creature["CostAtMeld"].item()
+                cost = self.creature.CostAtMeld.item()
             if cost == "":
-                cost = self.creature["Cost"].item()
+                cost = self.creature.Cost.item()
                     
             self.attrDict["Cost"].configure(state=NORMAL)
             self.attrDict["Cost"].delete(0, END)
@@ -380,27 +410,155 @@ class DeckHeroes(Frame):
             rb.bind("<Enter>", _levelRBevent)
             rb.bind("<Leave>", _levelRBevent)
         
-        #search Events        
+        #search Events 
+        
         self.srchCombo.bind("<Return>", self.updateCreature)
         self.srchCombo.bind("<<ComboboxSelected>>", self.updateCreature)
         self.srchButton.bind("<Button-1>", self.updateCreature)    
         
-        #filter Events
-        self.fltrStar.bind("<<ComboboxSelected>>", self.updateSearchCombolist)        
+        #filter Events     
+        
         self.fltrSkill.bind("<<ComboboxSelected>>", self.updateSearchCombolist)    
-        self.resetButton.bind("<Button-1>", self._resetTab)
+              
+        def _deselect(event):
+            if event.widget.cget("value") == self.fctnChoice.get():
+                event.widget.deselect()
+                self.fctnChoice.set("")
+                self.updateSearchCombolist()
+        
+        for fctn in self.fltrFaction.values():
+            fctn.bind("<ButtonRelease>", _deselect)
+  
+        
+        def _starEvent(event):
+            iStarOn = self.addImage("images/icons/logo_Star1.png", image="icon")
+            iStarOff = self.addImage("images/icons/logo_blankStar.png", image="icon")
+
+            if event.type == "4": #<Button-1> event - left-click mouse
+                self.chooseStar = int(event.widget.name)
+          
+            stars = self.chooseStar
+            
+            if event.type == "7": #<Enter> event
+                stars = int(event.widget.name)
+
+            elif event.type == "8": #<Leave> event
+                stars = int(self.chooseStar)            
+                
+            for star in range(stars):
+                self.starLabel[star].config(image=iStarOn)
+                self.starLabel[star].image = iStarOn
+
+            for star in range(stars,5):
+                self.starLabel[star].config(image=iStarOff)
+                self.starLabel[star].image = iStarOff   
+                                         
+        
+        for strLabel in self.starLabel.values():
+            strLabel.bind("<Enter>", _starEvent)
+            strLabel.bind("<Leave>", _starEvent)
+            strLabel.bind("<Button-1>", _starEvent)
+            strLabel.bind("<ButtonRelease>", self.updateSearchCombolist)
     
     
+    class ToolTip:
+        
+        def __init__(self, master, **opts):
+            self.master = master
+            self.delay = 0
+            self._tipwindow = None
+            self._opts = opts
+            self._id = None
+            self._id1 = self.master.bind("<Enter>", self.enter, '+')
+            self._id2 = self.master.bind("<Leave>", self.leave, '+')
+            self._id3 = self.master.bind("<ButtonPress>", self.leave, '+')
+            self._id4 = self.master.bind("<Motion>", self.motion, '+')
+            
+        def enter(self, event=None):
+            self._schedule()
+            
+        def leave(self, event=None):
+            self._unschedule()
+            self._hide()
+            
+        def motion(self, event=None):
+            if self._tipwindow:
+                x, y = self.coords()
+                self._tipwindow.wm_geometry("+%d+%d" % (x,y))
+                
+        def _schedule(self):
+            self._unschedule()
+            self._id = self.master.after(self.delay, self._show)
+            
+        def _unschedule(self):
+            id = self._id
+            self._id = None
+            if id:
+                self.master.after_cancel(id)
+                
+        def _show(self):
+            if not self._tipwindow:
+                self._tipwindow = tw = Toplevel(self.master)
+                tw.withdraw()
+                tw.wm_overrideredirect(1)
+                
+                #if tw.tk.call("tk", "windowingsystem") == 'aqua':
+                #    tw.tk.call("::tk::unsupported::MacWindowStyle", "style", tw._w, "help", "none")
+                    
+                self.create_contents()
+                tw.update_idletasks()
+                x, y = self.coords()
+                tw.wm_geometry("+%d+%d" % (x, y))
+                tw.deiconify()               
+                
+        def _hide(self):
+            tw = self._tipwindow
+            self._tipwindow = None
+            if tw:
+                tw.destroy()
+                
+        def coords(self):
+            tw = self._tipwindow
+            twx, twy = tw.winfo_reqwidth(), tw.winfo_reqheight()
+            w, h = tw.winfo_screenwidth(), tw.winfo_screenheight()
+            y = tw.winfo_pointery() + 20
+            if y + twy > h:
+                y = y - twy - 30
+            x = tw.winfo_pointerx() - twx / 2
+            if x < 0:
+                x = 0
+            elif x + twx > w:
+                x = w - twx
+            return x, y    
+                
+        def create_contents(self):
+            opts = self._opts.copy()
+            
+            skill = self.master.get()
+            text = fetchSkillDesc(skill)
+            width = 40
+            height = max(math.ceil(len(text)/40), 1)
+            
+            hover = Text(self._tipwindow, background="white", font="Helvetica 10",\
+                         padx=10, height=height, width=width,\
+                         wrap=WORD, relief=SOLID, borderwidth=1)#"#ffffe0"
+            hover.tag_configure(CENTER, justify='center')
+            hover.tag_add(CENTER, 1.0, "end")
+            hover.insert(END, text)
+            hover.pack(expand=1)
+            
+
+            
     
-    def updateSearchCombolist(self, *event):
+    def updateSearchCombolist(self, event=None, **kwargs):
         
         fltrTable = self.allCreatures
-            
-        if self.fltrStar.get() == "":
+        
+        if self.chooseStar == 0:
             fltrStar = None
         else:
-            fltrStar = self.fltrStar.get()
-            
+            fltrStar = str(self.chooseStar)
+    
         if self.fltrSkill.get() == "":
             fltrSkill = None           
         else:
@@ -645,7 +803,7 @@ class DeckHeroes(Frame):
     def fetchCreature(self, cr_code):
         
         creature = pd.read_csv('creatures.csv', dtype=str, keep_default_na=False)   
-        creature_desc = pd.read_csv('creature_desc.csv', keep_default_na=False)
+        creature_desc = pd.read_csv('creature_desc.csv', keep_default_na=False, encoding = "ISO-8859-1")
         creature = pd.merge(creature, creature_desc, how='left')
         creature.fillna("", inplace=True)
         cr_code = "".join(cr_code.split())
@@ -657,7 +815,9 @@ class DeckHeroes(Frame):
             query = creature[creature.Code=="null"].reset_index(drop=True)
             
         return query
-   
+
+        
+        
 
     def fetchHero(self, he_name):
         
@@ -669,12 +829,43 @@ class DeckHeroes(Frame):
             query = heroes[heroes.HeroName=="Null"].reset_index(drop=True)
             
         return query.to_dict()    
+
+   
+
+def fetchSkillDesc(skill):
         
+    skills = pd.read_csv('creature_skill_desc.csv', dtype=str, keep_default_na=False)
+        
+    if skill in skills.SkillName.values:
+        text = skills.Description[skills.SkillName==skill].item()
+    else:
+        text = "No entry."
+            
+    return text    
+    
+def center(win):
+    """
+    centers a tkinter window
+    :param win: the root or Toplevel window to center
+    """
+    win.update_idletasks()
+    width = win.winfo_width()
+    frm_width = win.winfo_rootx() - win.winfo_x()
+    win_width = width + 2 * frm_width
+    height = win.winfo_height()
+    titlebar_height = win.winfo_rooty() - win.winfo_y()
+    win_height = height + titlebar_height + frm_width
+    x = win.winfo_screenwidth() // 2 - win_width // 2
+    y = win.winfo_screenheight() // 2 - win_height // 2
+    win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
+    win.deiconify()
+    
 def main():
        
     root = Tk()
     ex = DeckHeroes(root)
-    root.geometry("%dx%d+100+100"%(WIDTH,HEIGHT))
+    #root.geometry("%dx%d+100+100"%(WIDTH,HEIGHT))
+    center(root)
     root.resizable(width=False, height=False)
     root.mainloop()  
 
