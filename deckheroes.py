@@ -230,11 +230,20 @@ class DeckHeroes(Frame):
                      ] 
         
         for lbl,ent in zip(sklOther[0::2], sklEntries):
-            sklentry = Entry(sklFrame, style='TEntry', **config["dynamic"])            
+            sklentry = Entry(sklFrame, style='TEntry', width=18,  **config["dynamic"])            
             sklentry.grid(sticky=W, padx=5, row=ent["row"], column=ent["column"])
             sklentry.insert(0, ent["text"])  
             sklentry.configure(state="readonly")
             attrDict[lbl] = sklentry
+        
+        iSearch = self.addImage("images/icons/search.png", image="icon")
+        
+        sklSrchButton = {}
+        
+        for row in range(3):    
+            sklSrchButton[row] = Button(sklFrame, image=iSearch)
+            sklSrchButton[row].image = iSearch
+            sklSrchButton[row].grid(row=row+1, column=3, sticky=W)
         
         sklProgress = [{"text":creature_[sklOther[1]].item(), "row":1, "column":2},
                        {"text":creature_[sklOther[3]].item(), "row":2, "column":2},
@@ -261,7 +270,6 @@ class DeckHeroes(Frame):
         srchCombo['values'] = self.allCreatures
 
         
-        iSearch = self.addImage("images/icons/search.png", image="icon")
         srchButton = Button(srchFrame, image=iSearch)
         srchButton.image = iSearch
         srchButton.grid(row=0, column=2, pady=10, sticky=W)
@@ -326,6 +334,7 @@ class DeckHeroes(Frame):
         self.srchCombo = srchCombo
         self.fltrFaction = fltrFaction
         self.fltrSkill = fltrSkill
+        self.sklSrchButton = sklSrchButton
         self.srchButton = srchButton
         self.starLabel = starLabel
         
@@ -363,17 +372,14 @@ class DeckHeroes(Frame):
     def _creatureTabEvents(self):
          
         #skill toolTip event
-        lvl0 = self.attrDict["Level0Skill"]
-        lvl5 = self.attrDict["Level5Skill"]
-        lvl10 = self.attrDict["Level10Skill"]
-        
-        lvl0Tooltip = self.ToolTip(lvl0)         
-        lvl5Tooltip = self.ToolTip(lvl5)   
-        lvl10Tooltip = self.ToolTip(lvl10)   
+        ToolTip(self.attrDict["Level0Skill"], mode="skill")         
+        ToolTip(self.attrDict["Level5Skill"], mode="skill")   
+        ToolTip(self.attrDict["Level10Skill"], mode="skill")   
+        ToolTip(self.attrDict["Level0SkillPoint"], mode="skillpoint")   
+        ToolTip(self.attrDict["Level5SkillPoint"], mode="skillpoint")   
+        ToolTip(self.attrDict["Level10SkillPoint"], mode="skillpoint")   
 
-
-        #changeLevel Event
-        
+        #changeLevel Event        
         levelRB = self.attrDict["chooseLevel"]      
         
         def _levelRBevent(event):
@@ -410,14 +416,17 @@ class DeckHeroes(Frame):
             rb.bind("<Enter>", _levelRBevent)
             rb.bind("<Leave>", _levelRBevent)
         
-        #search Events 
         
+        #skill Events
+        for i in range(3):
+            self.sklSrchButton[i].bind("<ButtonRelease>", self.srchSkillTab)
+        
+        #search Events        
         self.srchCombo.bind("<Return>", self.updateCreature)
         self.srchCombo.bind("<<ComboboxSelected>>", self.updateCreature)
         self.srchButton.bind("<Button-1>", self.updateCreature)    
         
-        #filter Events     
-        
+        #filter Events          
         self.fltrSkill.bind("<<ComboboxSelected>>", self.updateSearchCombolist)    
               
         def _deselect(event):
@@ -428,6 +437,7 @@ class DeckHeroes(Frame):
         
         for fctn in self.fltrFaction.values():
             fctn.bind("<ButtonRelease>", _deselect)
+            ToolTip(fctn, mode="faction", delay=700)   
   
         
         def _starEvent(event):
@@ -458,97 +468,9 @@ class DeckHeroes(Frame):
             strLabel.bind("<Enter>", _starEvent)
             strLabel.bind("<Leave>", _starEvent)
             strLabel.bind("<Button-1>", _starEvent)
-            strLabel.bind("<ButtonRelease>", self.updateSearchCombolist)
+            strLabel.bind("<ButtonRelease>", self.updateSearchCombolist)                       
     
     
-    class ToolTip:
-        
-        def __init__(self, master, **opts):
-            self.master = master
-            self.delay = 0
-            self._tipwindow = None
-            self._opts = opts
-            self._id = None
-            self._id1 = self.master.bind("<Enter>", self.enter, '+')
-            self._id2 = self.master.bind("<Leave>", self.leave, '+')
-            self._id3 = self.master.bind("<ButtonPress>", self.leave, '+')
-            self._id4 = self.master.bind("<Motion>", self.motion, '+')
-            
-        def enter(self, event=None):
-            self._schedule()
-            
-        def leave(self, event=None):
-            self._unschedule()
-            self._hide()
-            
-        def motion(self, event=None):
-            if self._tipwindow:
-                x, y = self.coords()
-                self._tipwindow.wm_geometry("+%d+%d" % (x,y))
-                
-        def _schedule(self):
-            self._unschedule()
-            self._id = self.master.after(self.delay, self._show)
-            
-        def _unschedule(self):
-            id = self._id
-            self._id = None
-            if id:
-                self.master.after_cancel(id)
-                
-        def _show(self):
-            if not self._tipwindow:
-                self._tipwindow = tw = Toplevel(self.master)
-                tw.withdraw()
-                tw.wm_overrideredirect(1)
-                
-                #if tw.tk.call("tk", "windowingsystem") == 'aqua':
-                #    tw.tk.call("::tk::unsupported::MacWindowStyle", "style", tw._w, "help", "none")
-                    
-                self.create_contents()
-                tw.update_idletasks()
-                x, y = self.coords()
-                tw.wm_geometry("+%d+%d" % (x, y))
-                tw.deiconify()               
-                
-        def _hide(self):
-            tw = self._tipwindow
-            self._tipwindow = None
-            if tw:
-                tw.destroy()
-                
-        def coords(self):
-            tw = self._tipwindow
-            twx, twy = tw.winfo_reqwidth(), tw.winfo_reqheight()
-            w, h = tw.winfo_screenwidth(), tw.winfo_screenheight()
-            y = tw.winfo_pointery() + 20
-            if y + twy > h:
-                y = y - twy - 30
-            x = tw.winfo_pointerx() - twx / 2
-            if x < 0:
-                x = 0
-            elif x + twx > w:
-                x = w - twx
-            return x, y    
-                
-        def create_contents(self):
-            opts = self._opts.copy()
-            
-            skill = self.master.get()
-            text = fetchSkillDesc(skill)
-            width = 40
-            height = max(math.ceil(len(text)/40), 1)
-            
-            hover = Text(self._tipwindow, background="white", font="Helvetica 10",\
-                         padx=10, height=height, width=width,\
-                         wrap=WORD, relief=SOLID, borderwidth=1)#"#ffffe0"
-            hover.tag_configure(CENTER, justify='center')
-            hover.tag_add(CENTER, 1.0, "end")
-            hover.insert(END, text)
-            hover.pack(expand=1)
-            
-
-            
     
     def updateSearchCombolist(self, event=None, **kwargs):
         
@@ -745,9 +667,15 @@ class DeckHeroes(Frame):
     def createSkillTab(self, parent, he_dict=None):
         
         tab = Frame(parent)
-        parent.insert(END, tab, text='Skills', underline=0)         
+        parent.insert(END, tab, text='Skills', underline=0)      
+        
+        return tab
         
  
+    def srchSkillTab(self, event=None):
+        self.notebook.select(self.sk_tab)
+
+
     def createRuneTab(self, parent, he_dict=None):
         
         tab = Frame(parent)
@@ -839,10 +767,119 @@ def fetchSkillDesc(skill):
     if skill in skills.SkillName.values:
         text = skills.Description[skills.SkillName==skill].item()
     else:
-        text = "No entry."
+        text = "No entry"
             
     return text    
+
+
+
     
+    
+class ToolTip:
+
+    def __init__(self, master, **opts):
+        self.master = master
+        self.delay = 0
+        if "delay" in opts.keys():
+            self.delay = opts["delay"]
+        
+        self._tipwindow = None
+        self._opts = opts
+        self._id = None
+        self._id1 = self.master.bind("<Enter>", self.enter, '+')
+        self._id2 = self.master.bind("<Leave>", self.leave, '+')
+        self._id3 = self.master.bind("<ButtonPress>", self.leave, '+')
+        self._id4 = self.master.bind("<Motion>", self.motion, '+')
+
+    def enter(self, event=None):
+        self._schedule()
+
+    def leave(self, event=None):
+        self._unschedule()
+        self._hide()
+
+    def motion(self, event=None):
+        if self._tipwindow:
+            x, y = self.coords()
+            self._tipwindow.wm_geometry("+%d+%d" % (x,y))
+
+    def _schedule(self):
+        self._unschedule()
+        self._id = self.master.after(self.delay, self._show)
+
+    def _unschedule(self):
+        id = self._id
+        self._id = None
+        if id:
+            self.master.after_cancel(id)
+
+    def _show(self):
+        if not self._tipwindow:
+            self._tipwindow = tw = Toplevel(self.master)
+            tw.withdraw()
+            tw.wm_overrideredirect(1)
+
+            #if tw.tk.call("tk", "windowingsystem") == 'aqua':
+            #    tw.tk.call("::tk::unsupported::MacWindowStyle", "style", tw._w, "help", "none")
+
+            self.create_contents()
+            tw.update_idletasks()
+            x, y = self.coords()
+            tw.wm_geometry("+%d+%d" % (x, y))
+            tw.deiconify()               
+
+    def _hide(self):
+        tw = self._tipwindow
+        self._tipwindow = None
+        if tw:
+            tw.destroy()
+
+    def coords(self):
+        tw = self._tipwindow
+        twx, twy = tw.winfo_reqwidth(), tw.winfo_reqheight()
+        w, h = tw.winfo_screenwidth(), tw.winfo_screenheight()
+        y = tw.winfo_pointery() + 20
+        if y + twy > h:
+            y = y - twy - 30
+        x = tw.winfo_pointerx() #- twx / 2
+        if x < 0:
+            x = 0
+        elif x + twx > w:
+            x = w - twx
+        return x, y    
+
+    def create_contents(self):
+        opts = self._opts.copy()
+
+        textopts = {"background":"white", "font":"Helvetica 8", "padx":5, "pady":5,\
+                    "height":1, "width":10, "wrap":WORD, "relief":SOLID, "borderwidth":1}#"#ffffe0"
+        
+        if opts["mode"] == "skill":
+            skill = self.master.get()
+            text = fetchSkillDesc(skill)
+        elif opts["mode"] == "skillpoint":
+            text = str(self.master.cget("value"))
+            textopts["font"] = "Helvetica 8 bold"
+            textopts["padx"] = 10
+            textopts["pady"] = 10
+        elif opts["mode"] == "faction":
+            text = self.master.cget("value")
+        
+        if len(text) <= 40:
+            textopts["width"] = len(text)+1
+            textopts["height"] = 1
+        else:
+            textopts["width"] = 40
+            textopts["height"] = max(math.ceil(len(text)/40), 1)
+
+
+            
+        hover = Text(self._tipwindow, **textopts)
+        hover.tag_configure(CENTER, justify='center')
+        hover.tag_add(CENTER, 1.0, "end")
+        hover.insert(END, text)
+        hover.pack(expand=1)
+
 def center(win):
     """
     centers a tkinter window
