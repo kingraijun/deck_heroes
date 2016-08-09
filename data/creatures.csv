@@ -134,7 +134,7 @@ Naga Mistress,Faen,4,4,14,17,205,805,320,1000,435,1195,550,1390,Ice Arrow,7,Mass
 Pale Dragon,Faen,4,6,13,,281,1087,381,1337,481,1587,581,1837,Miasma,6,Reflect,6,Sprite Link,6,cr_paledragon_1.jpg,cr_paledragon_2.jpg,,paledragon
 Pegasus Lord,Faen,4,4,13,16,300,834,425,1034,550,1234,675,1434,Miasma,6,Cloudburst,7,Restoration,8,cr_pegasuslord_1.jpg,cr_pegasuslord_2.jpg,,pegasuslord
 Satyr Sentry,Faen,4,4,14,17,260,980,355,1125,450,1270,545,1415,Miasma,6,Sprite Link,5,Elven Salve,6,cr_satyrsentry_1.jpg,cr_satyrsentry_2.jpg,,satyrsentry
-Treant Elder,Faen,4,4,13,16,270,820,400,965,530,1110,660,1255,Restoratino,6,Picking Off,6,Mass Heal,6,cr_treantelder_1.jpg,cr_treantelder_2.jpg,,treantelder
+Treant Elder,Faen,4,4,13,16,270,820,400,965,530,1110,660,1255,Restoration,6,Picking Off,6,Mass Heal,6,cr_treantelder_1.jpg,cr_treantelder_2.jpg,,treantelder
 Valkyrie,Faen,4,2,14,17,312,985,402,1140,492,1295,582,1450,Bullseye,,Dodge,7,Wing of Aegis,,cr_valkyrie_1.jpg,cr_valkyrie_2.jpg,,valkyrie
 Arcane Hunter,Human,4,4,13,16,260,815,410,940,560,1065,710,1190,Battleblow,4,Ambush,7,Dodge,8,cr_arcanehunter_1.jpg,cr_arcanehunter_2.jpg,,arcanehunter
 Arcane Master,Human,4,4,14,17,220,820,310,1040,400,1260,490,1480,Dodge,2,[S]Retreat,,Fatigue,6,cr_arcanemaster_1.jpg,cr_arcanemaster_2.jpg,,arcanemaster
@@ -221,7 +221,7 @@ Santa Claudia,Faen,5,4,18,,313,1322,458,1557,603,1792,748,2027,Immunity,8,Sancti
 Sea Wizard,Faen,5,4,19,23,375,1411,490,1621,605,1831,720,2041,Tempest,8,Sweeping Blow,,Frost Blade,10,cr_seawizard_1.jpg,cr_seawizard_2.jpg,,seawizard
 Yggdryad,Faen,5,4,17,21,315,1261,480,1441,645,1621,810,1801,Safeguard,7,Dodge,6,Delay,2,cr_yggdryad_1.jpg,cr_yggdryad_2.jpg,,yggdryad
 Angel Prime,Human,5,4,16,20,375,1080,515,1320,655,1560,795,1800,Bullseye,,Dodge,9,Ignite Soul,,cr_angelprime_1.jpg,cr_angelprime_2.jpg,,angelprime
-Aquarius,Human,5,4,23,27,285,1355,440,1550,595,1745,750,1940,Frost Blade,10,Freezing Field,,Hibernate,,cr_aquarius_1.jpg,cr_aquarius_2.jpg,"EB,HE",aquarius
+Aquarius,Human,5,4,23,27,285,1355,440,1550,595,1745,750,1940,Frost Blade,10,Freezing Field,,Hibernate,,cr_aquarius_1.jpg,cr_aquarius_2.jpg,"Event Booster, Holiday Event",aquarius
 Arcane Sage,Human,5,4,20,24,352,1086,627,1266,902,1446,1177,1626,Blaze,10,Sneak,9,Vacuum Bomb,,cr_arcanesage_1.jpg,cr_arcanesage_2.jpg,,arcanesage
 Archdeva,Human,5,4,17,21,365,1375,485,1610,605,1845,725,2080,Maji Shield,8,Retreat,,Mass Heal,8,cr_archdeva_1.jpg,cr_archdeva_2.jpg,,archdeva
 Ares,Human,5,4,16,20,356,1206,556,1361,756,1516,956,1671,Reflect,7,Dodge,8,Bloodlust,7,cr_ares_1.jpg,cr_ares_2.jpg,,ares
@@ -278,7 +278,7 @@ Thalassa,Mortii,5,6,14,17,240,1325,365,1500,490,1675,615,1850,Bane,6,Death March
 Undying Will,Mortii,5,4,16,20,354,1280,500,1455,665,1580,830,1705,Sacrifice,8,Gas Cloud,8,Restoration,6,cr_undyingwill_1.jpg,cr_undyingwill_2.jpg,,undyingwill
 Virgo,Mortii,5,4,23,27,325,1167,505,1392,685,1617,865,1842,Summon Virgil,,Death Gaze,,Soul Bond,,cr_virgo_1.jpg,cr_virgo_2.jpg,,virgo
 Abaddon,Neander,5,6,17,21,362,1198,462,1373,562,1548,662,1723,Thor's Rage,7,Retaliate,8,Immunity,9,cr_abaddon_1.jpg,cr_abaddon_2.jpg,,abaddon
-Anathema,Neander,5,4,16,20,325,1375,500,1570,675,1765,850,1960,Gas Cloud ,8,Stoneskin,,Bullseye,,cr_anathema_1.jpg,cr_anathema_2.jpg,,anathema
+Anathema,Neander,5,4,16,20,325,1375,500,1570,675,1765,850,1960,Gas Cloud,8,Stoneskin,,Bullseye,,cr_anathema_1.jpg,cr_anathema_2.jpg,,anathema
 Basilisk,Neander,5,4,21,25,426,1521,641,1786,856,2051,1071,2316,Trample,7,Life Sap,8,Rampart,8,cr_basilisk_1.jpg,cr_basilisk_2.jpg,,basilisk
 Capricorn,Neander,5,2,20,24,383,1164,598,1344,813,1524,1028,1704,Toxicity,9,Dodge,10,Fervent,,cr_capricorn_1.jpg,cr_capricorn_2.jpg,,capricorn
 Cosmic Hare,Neander,5,4,22,26,286,1326,411,1556,536,1786,661,2016,Star Strike,,Carrot Toss,,Rebirth,7,cr_cosmichare_1.jpg,cr_cosmichare_2.jpg,,cosmichare

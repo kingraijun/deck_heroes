@@ -1,4 +1,4 @@
-from tkinter import Tk, BOTH, CENTER, LEFT, RIGHT, END, HORIZONTAL, RAISED, GROOVE, RIDGE, DISABLED, SOLID, NORMAL, X, Y, NW, W, N, E, S, Canvas, Text, StringVar, Radiobutton, Toplevel, WORD
+from tkinter import Tk, BOTH, CENTER, LEFT, RIGHT, END, HORIZONTAL, RAISED, GROOVE, RIDGE, DISABLED, SOLID, NORMAL, INSERT, X, Y, NW, W, N, E, S, Canvas, Text, StringVar, Radiobutton, Toplevel, WORD
 from tkinter.ttk import Label, Frame, Notebook, Entry, Progressbar, Combobox, Button
 from PIL import Image, ImageTk
 import pandas as pd
@@ -7,7 +7,7 @@ import math
 
 
 #Global Variables
-WIDTH = 680
+WIDTH = 770
 HEIGHT = 550
 
 
@@ -32,7 +32,7 @@ class DeckHeroes(Frame):
         
         ilogo = self.addImage("images/icons/logo_deckheroes_1.jpg", image="logo")
         dh_title = Label(dh_frame, image=ilogo, text="Deck Heroes Dictionary", \
-                         compound=LEFT, font = "Helvetica 12 bold")
+                         compound=LEFT, font = "Times 15 bold")
         dh_title.image = ilogo
         dh_title.pack(fill=BOTH, pady=10, padx=10)
    
@@ -84,27 +84,31 @@ class DeckHeroes(Frame):
         self.creature = creature_
         
         ### Create all Frames to be used inside the notebook
+        #crFrame   = Frame(tab)
         imgFrame  = Frame(tab)
-        attrFrame = Frame(tab, relief=GROOVE, padding=5)
+        attrFrame = Frame(tab, relief=GROOVE)
         sklFrame  = Frame(tab, relief=GROOVE, padding=5)
+        srcFrame  = Frame(tab, relief=GROOVE, padding=5)
         srchFrame = Frame(tab)
         fltrFrame = Frame(tab)
         
         #Position the Frames in the notebook grid
         # (0,0) reserved for the crName below
-        imgFrame.grid  (row=1, column=0, sticky=N+W, rowspan=2)
-        attrFrame.grid (row=1, column=2, sticky=N+W, ipadx=10, ipady=5)
-        sklFrame.grid  (row=2, column=2, sticky=N+W, ipadx=10, ipady=5)
-        fltrFrame.grid (row=3, column=0, sticky=S+W+E, columnspan=3)
-        srchFrame.grid (row=4, column=0, sticky=S+W, columnspan=3)
+        #crFrame.grid   (sticky=N+W, columnspan=4)
+        imgFrame.grid  (row=2, column=0, sticky=S+N+W+E, rowspan=2)
+        attrFrame.grid (row=2, column=1, sticky=S+N+W+E, rowspan=2, ipadx=8, ipady=5)
+        sklFrame.grid  (row=2, column=2, sticky=N+W, padx=5, ipadx=10, ipady=8)
+        srcFrame.grid  (row=3, column=2, sticky=S+W+E+N, padx=5)
+        fltrFrame.grid (row=4, column=0, sticky=S+W+E, pady=5, columnspan=3)
+        srchFrame.grid (row=5, column=0, sticky=S+W, columnspan=3)
         
         #Name and description of the Creature
-        crName = Label (tab, text=creature_.CreatureName.item(), font="Helvetica 11 bold")
-        crName.grid (row=0, column=0, padx=10, pady=5)
+        crName = Label (tab, text=creature_.CreatureName.item(), font="Times 14 bold")
+        crName.grid (row=0, column=0, sticky=N, ipady=5, columnspan=3)
         attrDict["CreatureName"] = crName
         
         crDesc = Label(tab, text=creature_.Script.item(), font="Helvetica 9 italic")
-        crDesc.grid(row=0, column=1, sticky=W, pady=5, columnspan=2)
+        crDesc.grid(row=1, column=0, sticky=N, ipady=5, columnspan=3)
         attrDict["Script"] = crDesc
                        
         ### Contents of the imgFrame
@@ -115,14 +119,18 @@ class DeckHeroes(Frame):
         finally:
             crImage = Label(imgFrame, image=icrImage)
             crImage.image = icrImage
-        
+
         crImage.grid(columnspan=2, padx=15, sticky=W+N+E+S)
         attrDict["Image"] = crImage
         
-        srcLabel = Label(imgFrame, text="Source(s): ", **config["static"])
-        srcLabel.grid(row=1, column=0, padx=10, pady=10, sticky=W)
-        srcLabel2 = Label(imgFrame, text=creature_.Source.item(), **config["dynamic"])
-        srcLabel2.grid(row=1, column=1, pady=10, sticky=W)
+        ### Contents of the srcFrame
+        srcLabel = Label(srcFrame, text="Source(s)", **config["static"])
+        srcLabel.grid(ipadx=5, ipady=5, sticky=N+W)
+        srcLabel2 = Text(srcFrame, height=3, width=35, wrap=WORD, padx=10,\
+                         borderwidth=0, relief=SOLID, **config["dynamic"])
+        srcLabel2.grid(row=1, column=0, padx=5, pady=5)
+        srcLabel2.insert(END, creature_.Source.item())
+        srcLabel2.config(state=DISABLED)
         attrDict["Source"] = srcLabel2
                       
         ### Contents of the attrFrame
@@ -132,12 +140,12 @@ class DeckHeroes(Frame):
         
         ## Place static labels       
         attrLabels = {"Faction":     {"row":0, "column":0},
-                      "Star Rating": {"row":0, "column":2},
-                      "Delay Timer": {"row":1, "column":0},
-                      "Cost":        {"row":1, "column":2},
-                      "Base Atk":    {"row":2, "column":0},
-                      "Base HP":     {"row":2, "column":2},
-                      "Choose Level":{"row":3, "column":0}
+                      "Star Rating": {"row":1, "column":0},
+                      "Delay Timer": {"row":2, "column":0},
+                      "Cost":        {"row":3, "column":0},
+                      "Base Atk":    {"row":4, "column":0},
+                      "Base HP":     {"row":5, "column":0},
+                      "Choose Level":{"row":6, "column":0}
                      }
         
         for lbl, rc in attrLabels.items():
@@ -151,8 +159,13 @@ class DeckHeroes(Frame):
                 attrLabel = Label(attrFrame, text=lbl, image=iphoto,\
                                   compound=RIGHT, **config["static"])
                 attrLabel.image = iphoto
-                
-            attrLabel.grid(padx=5, sticky=E, **rc)       
+            
+            if lbl in ["Faction", "Star Rating"]:
+                pady = 1
+            else:
+                pady = 5
+            
+            attrLabel.grid(padx=5, pady=pady, sticky=E, **rc)       
         
         ## Place dynamic label: Faction
         fctn = creature_.Faction.item()
@@ -168,28 +181,28 @@ class DeckHeroes(Frame):
         istarImage = self.addImage(path["star"]%(star), image="star", star=star)
         starLabel = Label(attrFrame, image=istarImage, compound=RIGHT)
         starLabel.image = istarImage
-        starLabel.grid(sticky=W, padx=5, row=0, column=3)
+        starLabel.grid(sticky=W, padx=5, row=1, column=1)
         attrDict["StarRating"] = starLabel
         
         ## Place other dynamic entries
         attrOther = ["DelayTimer","Cost","BaseAtk0","BaseHP0"]
         
-        attrEntries = [{"attr":attrOther[0], "text":attrOther[0], "row":1, "column":1},
-                       {"attr":attrOther[1], "text":attrOther[1], "row":1, "column":3},
-                       {"attr":attrOther[2], "text":attrOther[2], "row":2, "column":1},
-                       {"attr":attrOther[3], "text":attrOther[3], "row":2, "column":3}
+        attrEntries = [{"attr":attrOther[0], "text":attrOther[0], "row":2, "column":1},
+                       {"attr":attrOther[1], "text":attrOther[1], "row":3, "column":1},
+                       {"attr":attrOther[2], "text":attrOther[2], "row":4, "column":1},
+                       {"attr":attrOther[3], "text":attrOther[3], "row":5, "column":1}
                       ] 
                
         for attr in attrEntries:
             entry = Entry(attrFrame, width=12, **config["dynamic"])            
-            entry.grid(sticky=W, padx=5, row=attr["row"], column=attr["column"])
+            entry.grid(sticky=W, padx=5, pady=5, row=attr["row"], column=attr["column"])
             entry.insert(0, creature_[attr["text"]].item())  
-            entry.configure(state="readonly")
+            entry.configure(state="readonly", cursor="")
             attrDict[attr["attr"]] = entry
             
         
         clFrame = Frame(attrFrame)
-        clFrame.grid(row=3, column=1)
+        clFrame.grid(row=6, column=1, pady=5)
         
         chooseLevelRB = {}
         self.chooseLevel = StringVar()
@@ -208,7 +221,7 @@ class DeckHeroes(Frame):
         sklFrame.rowconfigure(3, pad=10)
         
         sklLabels = {"Skill":       {"row":0, "column":1},
-                     "Pt": {"row":0, "column":2},
+                     "Pt":          {"row":0, "column":2},
                      "Level 0:":    {"row":1, "column":0},
                      "Level 5:":    {"row":2, "column":0},
                      "Level 10:":   {"row":3, "column":0}
@@ -239,7 +252,7 @@ class DeckHeroes(Frame):
             sklentry = Entry(sklFrame, style='TEntry', width=width,  **config["dynamic"])            
             sklentry.grid(sticky=W, padx=5, row=ent["row"], column=ent["column"])
             sklentry.insert(0, ent["text"])  
-            sklentry.configure(state="readonly")
+            sklentry.configure(state="readonly", cursor="")
             attrDict[lbl] = sklentry
         
         iSearch = self.addImage("images/icons/search.png", image="icon")
@@ -254,14 +267,11 @@ class DeckHeroes(Frame):
         #Contents of the srchFrame
         srchLabel = Label(srchFrame, text="Search:")
         srchLabel.grid(padx=5, pady=5, sticky=E)
-        srchCombo = Combobox(srchFrame)
+        srchCombo = AutocompleteCombobox(srchFrame)
         srchCombo.grid(row=0, column=1, pady=10, sticky=W)
-        srchCombo['values'] = self.allCreatures
-
-        
+        srchCombo.set_completion_list(self.allCreatures)
+       
         srchButton = Button(srchFrame, image=iSearch)
-        srchButton.image = iSearch
-        srchButton.grid(row=0, column=2, pady=10, sticky=W)
                   
         
         #Contents of the fltrFrame
@@ -310,13 +320,12 @@ class DeckHeroes(Frame):
         fltrSkillLabel = Label(fltrSkillFrame, text="Skill:")
         fltrSkillLabel.grid(padx=5, pady=10, sticky=E)        
       
-        fltrSkill = Combobox(fltrSkillFrame, state="readonly", justify=CENTER)
-        fltrSkill.grid(row=0, column=1, padx=5, pady=10, sticky=W)
-        
-        fltrSkill["values"] = [""] + self.getSkillList() 
+        fltrSkill = AutocompleteCombobox(fltrSkillFrame)
+        fltrSkill.grid(row=0, column=1, padx=5, pady=10, sticky=W)      
+        fltrSkill.set_completion_list([""] + self.getSkillList()) 
         
         resetButton = Button(srchFrame, text="Reset")
-        resetButton.grid(row=0, column=3, padx=10, pady=10, sticky=E)
+        resetButton.grid(row=0, column=2, padx=10, pady=10, sticky=E)
         resetButton.bind("<Button-1>", self._resetTab)
                     
         self.attrDict = attrDict
@@ -409,11 +418,11 @@ class DeckHeroes(Frame):
         
         #search Events        
         self.srchCombo.bind("<Return>", self.updateCreature)
-        self.srchCombo.bind("<<ComboboxSelected>>", self.updateCreature)
-        self.srchButton.bind("<Button-1>", self.updateCreature)    
+        self.srchCombo.bind("<<ComboboxSelected>>", self.updateCreature) 
         
         #filter Events          
         self.fltrSkill.bind("<<ComboboxSelected>>", self.updateSearchCombolist)    
+        self.fltrSkill.bind("<Return>", self.updateSearchCombolist)    
               
         def _deselect(event):
             if event.widget.cget("value") == self.fctnChoice.get():
@@ -496,7 +505,7 @@ class DeckHeroes(Frame):
             #Update attrDict               
             for attr,child in self.attrDict.items():
        
-                if attr in ["CreatureName", "Source", "Script"]:
+                if attr in ["CreatureName", "Script"]:
                     child.configure(text=creature_[attr].item())
 
                 elif attr=="Image":
@@ -556,8 +565,15 @@ class DeckHeroes(Frame):
                     self.attrDict["Cost"].configure(state="readonly")        
                 
                 elif attr == "chooseLevel":
-                    pass             
+                    pass       
                 
+                
+                elif isinstance(child, Text):
+                    child.configure(state=NORMAL)
+                    child.delete(1.0, END)
+                    child.insert(END, creature_[attr].item())
+                    child.configure(state=DISABLED) 
+                      
                 elif isinstance(child, Entry):
                     child.configure(state=NORMAL)
                     child.delete(0, END)
@@ -758,7 +774,58 @@ def fetchSkillDesc(skill):
     return text    
 
 
+class AutocompleteCombobox(Combobox):
 
+        def set_completion_list(self, completion_list):
+                """Use our completion list as our drop down selection menu, arrows move through menu."""
+                self._completion_list = sorted(completion_list, key=str.lower) # Work with a sorted list
+                self._hits = []
+                self._hit_index = 0
+                self.position = 0
+                self.bind('<KeyRelease>', self.handle_keyrelease)
+                self['values'] = self._completion_list  # Setup our popup menu
+
+        def autocomplete(self, delta=0):
+                """autocomplete the Combobox, delta may be 0/1/-1 to cycle through possible hits"""
+                if delta: # need to delete selection otherwise we would fix the current position
+                        self.delete(self.position, END)
+                else: # set position to end so selection starts where textentry ended
+                        self.position = len(self.get())
+                # collect hits
+                _hits = []
+                for element in self._completion_list:
+                        if element.lower().startswith(self.get().lower()): # Match case insensitively
+                                _hits.append(element)
+                # if we have a new hit list, keep this in mind
+                if _hits != self._hits:
+                        self._hit_index = 0
+                        self._hits=_hits
+                # only allow cycling if we are in a known hit list
+                if _hits == self._hits and self._hits:
+                        self._hit_index = (self._hit_index + delta) % len(self._hits)
+                # now finally perform the auto completion
+                if self._hits:
+                        self.delete(0,END)
+                        self.insert(0,self._hits[self._hit_index])
+                        self.select_range(self.position,END)
+
+        def handle_keyrelease(self, event):
+                """event handler for the keyrelease event on this widget"""
+                if event.keysym == "BackSpace":
+                        self.delete(self.index(INSERT),END)
+                        self.position = self.index(END)
+                if event.keysym == "Left":
+                        if self.position < self.index(END): # delete the selection
+                                self.delete(self.position, END)
+                        else:
+                                self.position = self.position-1 # delete one character
+                                self.delete(self.position, END)
+                if event.keysym == "Right":
+                        self.position = self.index(END) # go to end (no selection)
+                if len(event.keysym) == 1:
+                        self.autocomplete()
+                # No need for up/down, we'll jump to the popup
+                # list at the position of the autocompletion
     
     
 class ToolTip:
